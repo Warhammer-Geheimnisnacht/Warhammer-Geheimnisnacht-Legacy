@@ -1,0 +1,18 @@
+# c_naqab
+
+# County Title
+title = c_naqab
+
+# Settlements
+max_settlements = 4
+
+b_naqab = castle
+b_badraun = castle
+b_midar = temple
+#b_tellah = castle
+
+# Misc
+culture = medean
+religion = ormazd
+
+#History

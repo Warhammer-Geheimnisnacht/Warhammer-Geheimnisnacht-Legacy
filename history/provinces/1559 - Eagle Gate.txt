@@ -1,0 +1,30 @@
+# c_eagle_gate
+
+# County Title
+title = c_eagle_gate
+
+# Settlements
+max_settlements = 4
+
+b_eagle_tor = castle
+b_eridis_tor = city
+#b_hadroal = temple
+#b_saoren = castle
+
+# Misc
+culture = ellyrian
+religion = cadai
+
+#History
+1.1.1 = {
+	build_wonder = wonder_eagle_gate
+	set_wonder_stage = 4
+	build_wonder_upgrade = tiranoci_garrison
+	build_wonder_upgrade = sapherian_garrison
+	build_wonder_upgrade = cothiq_garrison
+    build_wonder_upgrade = upgrade_armory
+    build_wonder_upgrade = upgrade_hidden_passageways
+    build_wonder_upgrade = eagle_claw_bolt_throwers
+    build_wonder_upgrade = upgrade_roads
+    build_wonder_upgrade = upgrade_watchtower_network
+}

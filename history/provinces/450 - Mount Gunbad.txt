@@ -1,0 +1,24 @@
+# c_mount_gunbad
+
+# County Title
+title = c_mount_gunbad
+
+# Settlements
+max_settlements = 5
+
+b_kazad_gunbad = tribal
+#b_grung_brynduraz = city
+b_grungil_gorm = temple
+#b_barak_yar = castle
+#b_grung_vlad = city
+
+# Misc
+culture = orc_main
+religion = greenskin_gods
+terrain = mountain
+#History
+1.1.1= {
+	build_wonder = wonder_dawi_karak
+	set_wonder_stage = 1
+    set_wonder_damaged = yes
+}

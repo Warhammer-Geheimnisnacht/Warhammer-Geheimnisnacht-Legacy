@@ -1,0 +1,29 @@
+# c_nagrar
+
+# County Title
+title = c_nagrar
+
+# Settlements
+max_settlements = 5
+
+b_nagrar = castle
+b_nagorahar = castle
+b_nobhar = temple
+b_asobaern = castle
+b_haggar_kar = castle
+
+# Misc
+culture = karondi
+religion = cytharai
+
+#History
+1.1.1 = {
+	build_wonder = wonder_druchii_watchtower
+	set_wonder_stage = 3
+	build_wonder_upgrade = upgrade_soaring_fortresses
+	build_wonder_upgrade = upgrade_killing_fields
+	build_wonder_upgrade = upgrade_torture_chamber
+    build_wonder_upgrade = upgrade_strategic_exclaves
+    build_wonder_upgrade = upgrade_watchtower_network
+    build_wonder_upgrade = upgrade_spikes
+}

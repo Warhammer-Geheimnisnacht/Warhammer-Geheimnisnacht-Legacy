@@ -1,0 +1,43 @@
+objectTypes = {
+
+	### Special shields ######################################################
+
+	EMFXActorType = {
+		name = "e_the_empire"
+		actorfile = "gfx\models\Shields\holy_roman.xac"
+		scale = 0.5f
+		use_animation = no
+	}
+	EMFXActorType = {
+		name = "e_middenland"
+		actorfile = "gfx\models\Shields\holy_roman.xac"
+		scale = 0.5f
+		use_animation = no
+	}
+	EMFXActorType = {
+		name = "e_reikland"
+		actorfile = "gfx\models\Shields\holy_roman.xac"
+		scale = 0.5f
+		use_animation = no
+	}
+	EMFXActorType = {
+		name = "e_talabecland"
+		actorfile = "gfx\models\Shields\holy_roman.xac"
+		scale = 0.5f
+		use_animation = no
+	}
+	EMFXActorType = {
+		name = "e_westerland"
+		actorfile = "gfx\models\Shields\holy_roman.xac"
+		scale = 0.5f
+		use_animation = no
+	}
+
+	# Static objects
+	# Elven vortex
+	pdxmesh = {
+		name = "vortex"
+		file = "gfx/models/Mapitems/vortex.mesh"
+		scale = 1.0
+	}
+}

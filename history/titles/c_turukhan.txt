@@ -1,0 +1,4 @@
+2010.7.1={
+holder=35020
+historical_nomad=yes
+}

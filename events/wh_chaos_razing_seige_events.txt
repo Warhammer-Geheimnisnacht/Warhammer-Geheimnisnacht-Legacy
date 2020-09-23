@@ -1,0 +1,886 @@
+namespace = chaosrazing
+
+#A building was destroyed during the siege of [From.From.GetName].
+character_event = {
+	id = chaosrazing.1500
+	desc = DESCCHAOSRAZING1500
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		open_follower_of_any_chaos_gods = yes
+		FROM = {
+			holder_scope = {
+				open_follower_of_any_chaos_gods = no
+				NOT = { 
+					religion = norscan_gods 
+					religion = hashut
+				}
+			}
+        }
+    }
+
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					has_character_modifier = more_sacking
+					has_character_modifier = normal_sacking
+					has_character_modifier = less_sacking
+					has_character_modifier = zealous_sacking
+				}
+				war = yes
+			}
+			job_marshal = {
+				character_event = {
+					id = chaosrazing.1509
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_character_modifier = more_sacking
+					has_character_modifier = normal_sacking
+					has_character_modifier = less_sacking
+					has_character_modifier = zealous_sacking
+					war = no
+				}
+			}
+			character_event = {
+				id = chaosrazing.1508
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = CURSES
+	}
+}
+#HIDDEN
+character_event = {
+	id = chaosrazing.1501
+	desc = OK
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		open_follower_of_any_chaos_gods = yes
+		FROM = {
+			holder_scope = {
+				open_follower_of_any_chaos_gods = no
+				NOT = { 
+					religion = norscan_gods 
+					religion = hashut
+				}
+			}
+        }
+    }
+	
+	immediate = {
+		if = {
+			limit = {
+				FROM = {
+					NOT = { has_any_building = yes }
+					NOT = { is_capital = yes }
+					NOT = { has_holding_modifier = sacked }
+					NOT = { has_holding_modifier = burned }
+				}
+				FROM = {
+					owner = {
+						NOT = { character = ROOT }
+						NOT = { is_vassal_or_below = ROOT }
+					}
+				}
+				OR = {
+					has_character_modifier = more_sacking
+					has_character_modifier = normal_sacking
+					#has_character_modifier = less_sacking
+					has_character_modifier = zealous_sacking
+					war = no
+				}
+			}
+			character_event = {
+				id = chaosrazing.1503
+				days = 1
+			}
+			FROM = {
+				owner = {
+					character_event = {
+						id = chaosrazing.1506
+						days = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_any_building = yes
+					NOT = { has_holding_modifier = sacked }
+					NOT = { has_holding_modifier = burned }
+				}
+				FROM = {
+					owner = {
+						NOT = { character = ROOT }
+						NOT = { is_vassal_or_below = ROOT }
+					}
+				}
+				OR = {
+					has_character_modifier = more_sacking
+					has_character_modifier = normal_sacking
+					has_character_modifier = less_sacking
+					has_character_modifier = zealous_sacking
+					war = no
+				}
+			}
+			character_event = {
+				id = chaosrazing.1504
+				days = 1
+			}
+			FROM = {
+				owner = {
+					character_event = {
+						id = chaosrazing.1507
+						days = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_character_modifier = more_sacking
+					has_character_modifier = normal_sacking
+					has_character_modifier = less_sacking
+					has_character_modifier = zealous_sacking
+				}
+				war = yes
+			}
+			job_marshal = {
+				character_event = {
+					id = chaosrazing.1509
+				}
+			}
+		}
+	}
+	option = {
+		name = OK
+	}
+}
+#HIDDEN
+character_event = {
+	id = chaosrazing.1502
+	desc = OK
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		open_follower_of_any_chaos_gods = yes
+		FROM = {
+			holder_scope = {
+				open_follower_of_any_chaos_gods = no
+				NOT = { 
+					religion = norscan_gods 
+					religion = hashut
+				}
+			}
+        }
+    }
+	
+	immediate = {
+		if = {
+			limit = {
+				FROM = {
+					NOT = { has_any_building = yes }
+					NOT = { is_capital = yes }
+					NOT = { has_holding_modifier = sacked }
+					NOT = { has_holding_modifier = burned }
+					NOT = { holding_type = tribal }
+					NOT = { holding_type = nomad }
+				}
+				FROM = {
+					owner = {
+						NOT = { character = ROOT }
+						NOT = { is_vassal_or_below = ROOT }
+					}
+				}
+				OR = {
+					has_character_modifier = more_sacking
+					has_character_modifier = normal_sacking
+					#has_character_modifier = less_sacking
+					has_character_modifier = zealous_sacking
+					war = no
+				}
+			}
+			character_event = {
+				id = chaosrazing.1503
+				days = 1
+			}
+			FROM = {
+				owner = {
+					character_event = {
+						id = chaosrazing.1506
+						days = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_any_building = yes
+					NOT = { has_holding_modifier = sacked }
+					NOT = { has_holding_modifier = burned }
+					NOT = { holding_type = tribal }
+					NOT = { holding_type = nomad }
+				}
+				FROM = {
+					owner = {
+						NOT = { character = ROOT }
+						NOT = { is_vassal_or_below = ROOT }
+					}
+				}
+				OR = {
+					has_character_modifier = more_sacking
+					has_character_modifier = normal_sacking
+					#has_character_modifier = less_sacking
+					has_character_modifier = zealous_sacking
+					war = no
+				}
+			}
+			character_event = {
+				id = chaosrazing.1505
+				days = 1
+			}
+			FROM = {
+				owner = {
+					character_event = {
+						id = chaosrazing.1507
+						days = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_character_modifier = more_sacking
+					has_character_modifier = normal_sacking
+					has_character_modifier = less_sacking
+					has_character_modifier = zealous_sacking
+				}
+				war = yes
+			}
+			job_marshal = {
+				character_event = {
+					id = chaosrazing.1509
+				}
+			}
+		}
+	}
+	option = {
+		name = OK
+	}
+}
+#Angered by the resistance of the defenders, your men run wild on gaining entrance to [From.From.GetName]. A fire breaks out and destroys the settlement.
+character_event = {
+	id = chaosrazing.1503
+
+	#Angered by the resistance of the defenders, your men run wild on gaining entrance to [From.From.GetName]. A fire breaks out and destroys the settlement.
+	desc = DESCCHAOSRAZING1502A
+	#Hungry for loot, your men run riot in [From.From.GetName]. When the dust clears the town is left in ruins.
+	desc = DESCCHAOSRAZING1501A
+
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+	hide_from = yes
+	notification = yes
+
+	immediate = {
+		FROMFROM = {
+			destroy_settlement = THIS
+		}
+		add_doom_progress_medium_effect = yes
+	}
+
+	#There's nothing left to occupy...
+	option = {
+		name = OPTCHAOSRAZING1501A
+	}
+}
+#NOTIFICATION: Hungry for loot, your men run riot in [From.From.GetName]. Several buildings are destroyed in the chaos.
+character_event = {
+	id = chaosrazing.1504
+	desc = DESCCHAOSRAZING1501B
+
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+	hide_from = yes
+	notification = yes
+
+	immediate = {
+		FROMFROM = {
+			destroy_random_building = yes
+			destroy_random_building = yes
+			add_holding_modifier = {
+				modifier = sacked
+				months = 12
+			}
+		}
+		add_doom_progress_tiny_effect = yes
+	}
+
+	option = {
+		name = CURSES
+	}
+}
+#NOTIFICATION: Angered by the resistance of the defenders, your men run wild on gaining entrance to [From.From.GetName]. A fire breaks out and destroys much of the settlement before it is extinguished.
+character_event = {
+	id = chaosrazing.1505
+	desc = DESCCHAOSRAZING1502B
+
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+	hide_from = yes
+	notification = yes
+
+	immediate = {
+		FROMFROM = {
+			destroy_random_building = yes
+			destroy_random_building = yes
+			destroy_random_building = yes
+			destroy_random_building = yes
+			add_holding_modifier = {
+				modifier = burned
+				months = 24
+			}
+		}
+		add_doom_progress_tiny_effect = yes
+	}
+
+	option = {
+		name = CURSES
+	}
+}
+#NOTIFICATION: Your holding of [From.From.GetName] has been destroyed in the fighting!
+character_event = {
+	id = chaosrazing.1506
+	desc = DESCCHAOSRAZING1506
+
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+	hide_from = yes
+	notification = yes
+
+	option = {
+		name = CURSES
+	}
+}
+#NOTIFICATION: Your holding of [From.From.GetName] has been destroyed in the fighting!
+character_event = {
+	id = chaosrazing.1507
+	desc = DESCCHAOSRAZING1506
+
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+	hide_from = yes
+	notification = yes
+
+	option = {
+		name = CURSES
+	}
+}
+#NOTIFICATION: A building was destroyed during the siege of [From.From.GetName].
+character_event = {
+	id = chaosrazing.1508
+	desc = DESCCHAOSRAZING1500
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+	hide_from = yes
+	notification = yes
+
+	trigger = {
+		FROMFROM = {
+			has_any_building = yes
+			NOT = { has_holding_modifier = sacked }
+			NOT = { has_holding_modifier = burned }
+		}
+	}
+
+	immediate = {
+		FROMFROM = {
+			destroy_random_building = yes
+		}
+		add_doom_progress_tiny_effect = yes
+	}
+	option = {
+		name = CURSES
+	}
+}
+#HIDDEN
+character_event = {
+	id = chaosrazing.1509
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	option = {
+		name = OK
+
+		FROM = {
+			character_event = {
+				id = chaosrazing.1510
+			}
+		}
+	}
+}
+#Your marshal is asking how you want to deal with the captured towns.
+character_event = {
+	id = chaosrazing.1510
+	desc = DESCCHAOSRAZING1510
+
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		remove_character_modifier = more_sacking
+		remove_character_modifier = normal_sacking
+		remove_character_modifier = less_sacking
+		remove_character_modifier = zealous_sacking
+		clr_character_flag = changed_discipline
+		set_character_flag = changed_discipline
+	}
+
+	option = {
+		name = OPTCHAOSRAZING1510A # Burn it all!
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					trait = kind
+					trait = charitable
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					trait = deceitful
+					trait = ambitious
+					trait = envious
+					trait = cruel
+					trait = impaler
+				}
+			}
+		}
+		custom_tooltip = {
+			text = desc_more_sacking
+			hidden_tooltip = {
+				add_character_modifier = {
+					name =  more_sacking
+					days = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = OPTCHAOSRAZING1510C # Go easy
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				OR = {
+					trait = kind
+					trait = charitable
+					trait = greedy
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					trait = envious
+					trait = cruel
+					trait = impaler
+				}
+			}
+		}
+		custom_tooltip = {
+			text = desc_less_sacking
+			hidden_tooltip = {
+				add_character_modifier = {
+					name =  less_sacking
+					days = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = OPTCHAOSRAZING1510D # Holy war
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					trait = kind
+					trait = charitable
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					trait = deceitful
+					trait = ambitious
+					trait = envious
+					trait = cruel
+					trait = impaler
+				}
+			}
+			modifier = {
+				factor = 4
+				trait = zealous
+			}
+		}
+		trigger = {
+			any_war = {
+				OR = {
+					using_cb = religious
+					using_cb = crusade
+					using_cb = new_crusade
+				}
+			}
+		}
+		custom_tooltip = {
+			text = desc_zealous_sacking
+			hidden_tooltip = {
+				add_character_modifier = {
+					name =  zealous_sacking
+					days = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = OPTCHAOSRAZING1510B # Meh
+		ai_chance = {
+			factor = 20
+		}
+		custom_tooltip = {
+			text = desc_normal_sacking
+			hidden_tooltip = {
+				add_character_modifier = {
+					name =  normal_sacking
+					days = -1
+				}
+			}
+		}
+	}
+}
+#HIDDEN
+character_event = {
+	id = chaosrazing.1511
+	desc = OK
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		open_follower_of_any_chaos_gods = yes
+		FROM = {
+			holder_scope = {
+				open_follower_of_any_chaos_gods = no
+				NOT = { 
+					religion = norscan_gods 
+					religion = hashut
+				}
+			}
+        }
+    }
+	
+	immediate = {
+		if = {
+			limit = {
+				FROM = {
+					NOT = { has_any_building = yes }
+					NOT = { is_capital = yes }
+					NOT = { has_holding_modifier = sacked }
+					NOT = { has_holding_modifier = burned }
+				}
+				FROM = {
+					owner = {
+						NOT = { character = ROOT }
+						NOT = { is_vassal_or_below = ROOT }
+					}
+				}
+				OR = {
+					has_character_modifier = more_sacking
+					#has_character_modifier = normal_sacking
+					#has_character_modifier = less_sacking
+					has_character_modifier = zealous_sacking
+				}
+			}
+			character_event = {
+				id = chaosrazing.1512
+				days = 1
+			}
+			FROM = {
+				owner = {
+					character_event = {
+						id = chaosrazing.1506
+						days = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_any_building = yes
+					NOT = { has_holding_modifier = sacked }
+					NOT = { has_holding_modifier = burned }
+				}
+				FROM = {
+					owner = {
+						NOT = { character = ROOT }
+						NOT = { is_vassal_or_below = ROOT }
+					}
+				}
+				OR = {
+					has_character_modifier = more_sacking
+					#has_character_modifier = normal_sacking
+					#has_character_modifier = less_sacking
+					has_character_modifier = zealous_sacking
+				}
+			}
+			character_event = {
+				id = chaosrazing.1513
+				days = 1
+			}
+			FROM = {
+				owner = {
+					character_event = {
+						id = chaosrazing.1507
+						days = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_character_modifier = more_sacking
+					has_character_modifier = normal_sacking
+					has_character_modifier = less_sacking
+					has_character_modifier = zealous_sacking
+				}
+				war = yes
+			}
+			job_marshal = {
+				character_event = {
+					id = chaosrazing.1509
+				}
+			}
+		}
+	}
+	option = {
+		name = OK
+	}
+}
+#Your men have completely razed the infidel stronghold of [From.From.GetName]!
+#An outbreak of violence during the occupation of [From.From.GetName] has lead to a bloodbath! While bodies litter the street the population have fled leaving the settlement in ruins.
+character_event = {
+	id = chaosrazing.1512
+
+	#Your men have completely razed the infidel stronghold of [From.From.GetName]!
+	desc =  {
+		text = DESCCHAOSRAZING1512A
+		trigger = {
+			has_character_modifier = zealous_sacking
+		}
+	}
+	#An outbreak of violence during the occupation of [From.From.GetName] has lead to a bloodbath! While bodies litter the street the population have fled leaving the settlement in ruins.
+	desc = {
+		text = DESCCHAOSRAZING1512B
+		trigger = {
+			has_character_modifier = more_sacking
+		}
+	}
+
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+	hide_from = yes
+	notification = yes
+
+	immediate = {
+		FROMFROM = {
+			destroy_settlement = THIS
+		}
+	}
+	option = {
+		name = EXCELLENT
+	}
+}
+#Your troops have slaughtered the infidels of [From.From.GetName]! Bodies litter the streets and many buildings were destroyed.
+#An outbreak of violence during the occupation of [From.From.GetName] has lead to reprisals from your own troops. Many buildings were destroyed before order was restored.
+character_event = {
+	id = chaosrazing.1513
+
+	#Your troops have slaughtered the infidels of [From.From.GetName]! Bodies litter the streets and many buildings were destroyed.
+	desc =  {
+		text = DESCCHAOSRAZING1513A
+		trigger = {
+			has_character_modifier = zealous_sacking
+		}
+	}
+	#An outbreak of violence during the occupation of [From.From.GetName] has lead to reprisals from your own troops. Many buildings were destroyed before order was restored.
+	desc = {
+		text = DESCCHAOSRAZING1513B
+		trigger = {
+			has_character_modifier = more_sacking
+		}
+	}
+
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+	hide_from = yes
+	notification = yes
+
+	immediate = {
+		FROMFROM = {
+			destroy_random_building = yes
+			destroy_random_building = yes
+			destroy_random_building = yes
+			destroy_random_building = yes
+			destroy_random_building = yes
+			destroy_random_building = yes
+			destroy_random_building = yes
+			destroy_random_building = yes
+
+			add_holding_modifier = {
+				modifier = burned
+				months = 24
+			}
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+	}
+}
+#HIDDEN
+character_event = {
+	id = chaosrazing.1514
+
+	hide_window = yes
+
+	trigger = {
+		war = no
+		OR = {
+			has_character_modifier = more_sacking
+			has_character_modifier = normal_sacking
+			has_character_modifier = less_sacking
+			has_character_modifier = zealous_sacking
+		}
+	}
+	mean_time_to_happen = { days = 1 }
+	immediate = {
+		remove_character_modifier = more_sacking
+		remove_character_modifier = normal_sacking
+		remove_character_modifier = less_sacking
+		remove_character_modifier = zealous_sacking
+	}
+	option = {
+		name = OK
+	}
+}
+#HIDDEN
+character_event = {
+	id = chaosrazing.1515
+	desc = OK
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		open_follower_of_any_chaos_gods = yes
+		FROM = {
+			holder_scope = {
+				open_follower_of_any_chaos_gods = no
+				NOT = { 
+					religion = norscan_gods 
+					religion = hashut
+				}
+			}
+        }
+    }
+	
+	immediate = {
+		if = {
+			limit = {
+				FROM = {
+					NOT = { is_capital = yes }
+					NOT = { has_holding_modifier = sacked }
+					NOT = { has_holding_modifier = burned }
+				}
+				FROM = {
+					owner = {
+						NOT = { character = ROOT }
+						NOT = { is_vassal_or_below = ROOT }
+					}
+				}
+				OR = {
+					has_character_modifier = more_sacking
+					#has_character_modifier = normal_sacking
+					#has_character_modifier = less_sacking
+					has_character_modifier = zealous_sacking
+				}
+			}
+			character_event = {
+				id = chaosrazing.1512
+				days = 1
+			}
+			FROM = {
+				owner = {
+					character_event = {
+						id = chaosrazing.1506
+						days = 1
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = OK
+	}
+}

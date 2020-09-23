@@ -1,0 +1,633 @@
+#	Example:
+#
+#	example_trigger = {
+#		year = 1066
+#		num_of_spouses = 2
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		example_trigger = yes
+#	}
+can_use_retinue_trigger = {
+	OR = {
+		ai = no
+		is_patrician = yes
+		is_nomadic = yes
+		AND = {
+			higher_real_tier_than = BARON
+			OR = {
+				AND = {
+					OR = {
+						is_feudal = yes
+						is_theocracy = yes
+						is_republic = yes
+					}
+					# > doesn't work with demesne_size
+					OR = {
+						demesne_size = 2
+						higher_real_tier_than = COUNT
+					}
+				}
+				is_tribal = yes
+			}
+		}
+	}
+}
+
+is_vampire_trigger = {
+	OR = {
+		trait = vampire_lahmian_visible
+		trait = vampire_carstein_visible
+		trait = vampire_blood_visible
+		trait = vampire_strigoi_visible
+		trait = vampire_necrarch_visible
+		trait = vampire_jade_visible
+		trait = vampire_mahtmasi_visible
+
+		trait = vampire_lahmian_hidden
+		trait = vampire_carstein_hidden
+		trait = vampire_blood_hidden
+		trait = vampire_strigoi_hidden
+		trait = vampire_necrarch_hidden
+		trait = vampire_jade_hidden
+		trait = vampire_mahtmasi_hidden
+	}
+}
+
+is_vampire_visible_trigger = {
+	OR = {
+		trait = vampire_lahmian_visible
+		trait = vampire_carstein_visible
+		trait = vampire_blood_visible
+		trait = vampire_strigoi_visible
+		trait = vampire_necrarch_visible
+		trait = vampire_jade_visible
+		trait = vampire_mahtmasi_visible
+	}
+}
+
+is_undead_trigger = {
+	OR = { 		#more entries might be added later on
+
+		trait = vampire_lahmian_visible
+		trait = vampire_carstein_visible
+		trait = vampire_blood_visible
+		trait = vampire_strigoi_visible
+		trait = vampire_necrarch_visible
+		trait = vampire_jade_visible
+		trait = vampire_mahtmasi_visible
+
+		trait = vampire_lahmian_hidden
+		trait = vampire_carstein_hidden
+		trait = vampire_blood_hidden
+		trait = vampire_strigoi_hidden
+		trait = vampire_necrarch_hidden
+		trait = vampire_jade_hidden
+		trait = vampire_mahtmasi_hidden
+
+		trait = creature_nehekharan
+	}
+}
+
+is_living_human_trigger = {
+	OR = {
+		trait = creature_human
+		trait = creature_amazon
+	}
+	NOR = {
+		trait = vampire_lahmian_visible
+		trait = vampire_carstein_visible
+		trait = vampire_blood_visible
+		trait = vampire_strigoi_visible
+		trait = vampire_necrarch_visible
+		trait = vampire_jade_visible
+		trait = vampire_mahtmasi_visible
+
+		trait = vampire_lahmian_hidden
+		trait = vampire_carstein_hidden
+		trait = vampire_blood_hidden
+		trait = vampire_strigoi_hidden
+		trait = vampire_necrarch_hidden
+		trait = vampire_jade_hidden
+		trait = vampire_mahtmasi_hidden
+	}
+}
+
+cant_love_trigger = {
+	NOR = {
+		culture_group = daemonic_group
+		trait = creature_goblin
+		trait = creature_orc
+		trait = creature_skink
+		trait = creature_skaven
+		culture_group = orc_group
+		culture_group = goblin_group
+		culture_group = lizardman_group
+		trait = druchi_witch_elf
+		trait = druchi_assassin
+		trait = skaven_breeder
+	}
+}
+is_invincible_trigger = {
+	OR = {		#more entries might be added later on
+		has_artifact = carstein_ring
+		trait = khemri_tomb_king
+		trait = black_arkhan
+		trait = creature_celdragon
+		trait = malekith 					#Survived more than 5000 years, face it hes not going to die
+	}
+}
+
+is_immortal_trigger = {
+	OR = { 		#more entries might be added later on
+		trait = immortal
+
+		trait = creature_orc
+		trait = creature_goblin
+		trait = creature_slann
+		trait = creature_nehekharan
+
+		trait = khorne_demon
+		trait = nurgle_demon
+		trait = slaanesh_demon
+		trait = tzeentch_demon
+		trait = hashut_kdaai
+
+		trait = vampire_lahmian_visible
+		trait = vampire_carstein_visible
+		trait = vampire_blood_visible
+		trait = vampire_strigoi_visible
+		trait = vampire_necrarch_visible
+		trait = vampire_jade_visible
+		trait = vampire_mahtmasi_visible
+
+		trait = vampire_lahmian_hidden
+		trait = vampire_carstein_hidden
+		trait = vampire_blood_hidden
+		trait = vampire_strigoi_hidden
+		trait = vampire_necrarch_hidden
+		trait = vampire_jade_hidden
+		trait = vampire_mahtmasi_hidden
+
+		trait = creature_celdragon
+	}
+}
+
+is_incapacitated_trigger = {
+	OR = {
+		prisoner = yes
+		trait = incapable
+		trait = incapacitated
+		trait = studying_magic
+		trait = questing
+		trait = blood_questing
+		trait = monster_hunting
+		trait = on_witch_hunt
+		trait = on_dark_elf_raid
+		trait = searching_underground
+		trait = studying_mechanics
+		trait = on_lahmian_mission
+		trait = lizardman_sleepingslann
+		trait = sold_into_slavery
+		trait = on_knight_quest
+		trait = on_grail_quest
+		trait = on_errantry_quest
+		trait = retired_with_harem
+		trait = hard_pregnancy
+		trait = troubled_pregnancy
+		trait = resting
+		trait = staked
+		trait = pregnancy_finishing
+		trait = in_stock
+		trait = on_pilgrimage
+		trait = creature_celdragon
+		trait = hollowed
+	}
+}
+
+is_cultist_trigger = {
+	OR = {
+		society_member_of = cult_of_khorne
+		society_member_of = cult_of_khorne2
+		society_member_of = cult_of_khorne3
+		society_member_of = cult_of_nurgle
+		society_member_of = cult_of_nurgle2
+		society_member_of = cult_of_nurgle3
+		society_member_of = cult_of_slaanesh
+		society_member_of = cult_of_slaanesh2
+		society_member_of = cult_of_slaanesh3
+		society_member_of = cult_of_tzeentch
+		society_member_of = cult_of_tzeentch2
+		society_member_of = cult_of_tzeentch3
+	}
+}
+
+is_chaos_champion_trigger = {
+	custom_tooltip = {
+		text = is_chaos_champion_tt
+		OR = {
+			trait = champion_khorne
+			trait = champion_nurgle
+			trait = champion_slaanesh
+			trait = champion_tzeentch
+			trait = champion_undivided
+		}
+	}
+}
+
+is_chaos_chosen_trigger = {
+	custom_tooltip = {
+		text = is_chaos_chosen_tt
+		OR = {
+			trait = chosen_khorne
+			trait = chosen_nurgle
+			trait = chosen_slaanesh
+			trait = chosen_tzeentch
+		}
+	}
+}
+
+is_daemon_prince_trigger = {
+	custom_tooltip = {
+		text = is_chaos_daemon_prince_tt
+		OR = {
+			trait = prince_khorne
+			trait = prince_nurgle
+			trait = prince_slaanesh
+			trait = prince_tzeentch
+		}
+	}
+}
+
+is_chaos_champion_chosen_or_prince_trigger = {
+	OR = {
+		is_chaos_champion_trigger = yes
+		is_chaos_chosen_trigger = yes
+		is_daemon_prince_trigger = yes
+	}
+}
+
+is_daemon_trigger = {
+	OR = {
+		trait = khorne_demon
+		trait = nurgle_demon
+		trait = slaanesh_demon
+		trait = tzeentch_demon
+		trait = hashut_kdaai
+		trait = prince_khorne
+		trait = prince_nurgle
+		trait = prince_slaanesh
+		trait = prince_tzeentch
+		trait = khorne_bloodletter
+		trait = nurgle_plaguebearer
+		trait = slaanesh_daemonette
+		trait = tzeentch_flamer
+	}
+}
+
+is_basic_daemon_trigger = {
+	OR = {
+		trait = hashut_kdaai
+		trait = khorne_bloodletter
+		trait = nurgle_plaguebearer
+		trait = slaanesh_daemonette
+		trait = tzeentch_flamer
+	}
+}
+
+is_tree_trigger = {
+	OR = {
+		trait = creature_forestspirit
+		trait = creature_treekin
+	}
+}
+
+is_incorruptible_trigger = {
+	OR = {
+		has_character_flag = forsaken_flag
+		trait = khorne_demon
+		trait = nurgle_demon
+		trait = slaanesh_demon
+		trait = tzeentch_demon
+		trait = hashut_kdaai
+		trait = prince_khorne
+		trait = prince_nurgle
+		trait = prince_slaanesh
+		trait = prince_tzeentch
+		trait = khorne_bloodletter
+		trait = nurgle_plaguebearer
+		trait = slaanesh_daemonette
+		trait = tzeentch_flamer
+		trait = avatar_kurnous
+		trait = avatar_isha
+		trait = everqueen
+		trait = fay_enchantress
+		trait = malekith
+		trait = creature_forestspirit
+		trait = creature_slann
+		trait = creature_nehekharan
+		trait = creature_skink
+		trait = creature_saurus
+		trait = creature_orc
+		trait = creature_goblin
+		trait = creature_snotling
+		trait = chosen_khorne
+		trait = chosen_nurgle
+		trait = chosen_slaanesh
+		trait = chosen_tzeentch
+		trait = creature_chaosspawn
+
+		trait = creature_celdragon
+		trait = vampire_lahmian_visible
+		trait = vampire_carstein_visible
+		trait = vampire_blood_visible
+		trait = vampire_strigoi_visible
+		trait = vampire_necrarch_visible
+		trait = vampire_jade_visible
+		trait = vampire_mahtmasi_visible
+
+		trait = vampire_lahmian_hidden
+		trait = vampire_carstein_hidden
+		trait = vampire_blood_hidden
+		trait = vampire_strigoi_hidden
+		trait = vampire_necrarch_hidden
+		trait = vampire_jade_hidden
+		trait = vampire_mahtmasi_hidden
+	}
+}
+
+cannot_marry_trigger = {
+			OR = {
+				is_theocracy = yes
+				trait = eunuch
+				trait = monk
+				trait = nun
+				trait = horse
+				trait = witch_hunter
+				trait = khemri_liche_priest
+				trait = khemri_soldier
+				trait = druchi_witch_elf
+				trait = druchi_sorceress
+				trait = creature_amazon
+				trait = creature_treekin
+				trait = creature_chaosspawn
+				trait = creature_monster
+				trait = vampire_necrarch_visible
+				trait = special_char_red_duke
+				trait = everqueen_heir
+				trait = widowed
+				trait = khorne_demon
+				trait = nurgle_demon
+				trait = slaanesh_demon
+				trait = tzeentch_demon
+				trait = hashut_kdaai
+				trait = khorne_bloodletter
+				trait = nurgle_plaguebearer
+				trait = slaanesh_daemonette
+				trait = tzeentch_flamer
+				trait = everqueen
+				trait = fay_enchantress
+				trait = creature_forestspirit
+				trait = creature_slann
+				trait = creature_skink
+				trait = creature_saurus
+				trait = creature_orc
+				trait = creature_goblin
+				trait = creature_snotling
+				trait = creature_celdragon
+				trait = mage_apprentice
+				trait = disinherited_amazon
+				trait = in_stock
+				trait = clay_sculptor
+				trait = astromancer
+				trait = skaven_breeder
+				trait = courting
+			}
+}
+
+is_disease_immune_race = {
+	OR = {
+		trait = creature_forestspirit
+		trait = creature_treekin
+		trait = creature_nehekharan
+		trait = creature_slann
+		trait = vampire_carstein_visible
+		trait = vampire_blood_visible
+		trait = vampire_strigoi_visible
+		trait = vampire_necrarch_visible
+		trait = vampire_jade_visible
+		trait = vampire_mahtmasi_visible
+		trait = vampire_lahmian_visible
+		trait = vampire_carstein_hidden
+		trait = vampire_blood_hidden
+		trait = vampire_strigoi_hidden
+		trait = vampire_necrarch_hidden
+		trait = vampire_jade_hidden
+		trait = vampire_mahtmasi_hidden
+		trait = vampire_lahmian_hidden
+		trait = khorne_demon
+		trait = slaanesh_demon
+		trait = tzeentch_demon
+		trait = hashut_kdaai
+		trait = creature_skink
+		trait = creature_saurus
+		trait = creature_orc
+		trait = creature_goblin
+		trait = creature_snotling
+	}
+}
+
+is_long_lived_character = {
+	OR = {
+		trait = creature_elf
+		trait = creature_dwarf
+		trait = creature_chaos_dwarf
+		trait = grail_knight
+		trait = immortal
+	}
+}
+
+is_no_females_race = {
+	OR = {
+		trait = creature_skink
+		trait = creature_saurus
+		trait = creature_orc
+		trait = creature_goblin
+		trait = creature_snotling
+		trait = creature_nehekharan
+		trait = creature_slann
+		trait = creature_skaven
+	}
+}
+
+
+is_mutated_trigger = {
+	OR = {
+		trait = mut_eyes
+		trait = mut_thirdeye
+		trait = mut_spines
+		trait = mut_scales
+		trait = mut_horns
+		trait = mut_spines
+		trait = mut_doublehead
+		trait = mut_beak
+		trait = mut_tongue
+		trait = mut_teeth
+		trait = mut_eyes
+		trait = mut_bigeyes
+	}
+}
+has_minor_mutation_trigger = {
+	check_variable = { which = mutation_counter value = 1 }
+	NOT = { check_variable = { which = mutation_counter value = 3 } }
+}
+has_major_mutation_trigger = {
+	check_variable = { which = mutation_counter value = 3 }
+	NOT = { check_variable = { which = mutation_counter value = 5 } }
+}
+has_massive_mutation_trigger = {
+	check_variable = { which = mutation_counter value = 5 }
+}
+
+#checks if a character is a demon
+is_demon_trigger = {
+	OR = {
+		trait = khorne_demon
+		trait = slaanesh_demon
+		trait = nurgle_demon
+		trait = tzeentch_demon
+	}
+}
+
+#checks if a character can get sick
+can_get_sick_trigger = {
+	NOR = {
+		AND = {
+			is_demon_trigger = yes
+			NOT = { religion = nurgle }
+		}
+		trait = creature_treekin
+		trait = creature_forestspirit
+		trait = creature_nehekharan
+		trait = creature_slann
+		is_vampire_trigger = yes
+	}
+}
+
+has_chaos_taint_trigger = {
+	OR = {
+		has_character_flag = demon_child
+		has_character_flag = demon_child_non_pagan
+		is_mutated_trigger = yes
+		trait = possessed
+		# Add more
+	}
+}
+
+does_not_suffer_PTSD = {
+	OR = {
+		is_undead_trigger = yes
+		religion_group = chaos_gods_group
+		religion_group = greenskin_gods_group
+		trait = creature_dwarf
+		trait = creature_orc
+		trait = creature_goblin
+		trait = creature_elf
+		trait = creature_skaven
+		trait = creature_skink
+		trait = creature_beastman
+		culture_group = orc_group
+		culture_group = goblin_group
+		culture_group = lizardman_group
+	}
+}
+
+open_follower_of_khorne = {	
+	OR = {
+		religion = khorne
+		trait = norscan_patron_kharneth
+	}
+}
+
+follower_of_khorne = {	
+	OR = {
+		secret_religion = khorne
+		open_follower_of_khorne = yes
+	}
+}
+
+open_follower_of_nurgle = {	
+	OR = {
+		religion = nurgle
+		trait = norscan_patron_nurgleth
+	}
+}
+
+follower_of_nurgle = {
+	OR = {
+		secret_religion = nurgle
+		open_follower_of_nurgle = yes
+	}
+}
+
+open_follower_of_tzeentch = {
+	OR = {
+		religion = tzeentch
+		trait = norscan_patron_tchar
+	}
+}
+
+
+follower_of_tzeentch = {
+	OR = {
+		secret_religion = tzeentch
+		open_follower_of_tzeentch = yes
+	}
+}
+
+open_follower_of_slaanesh = {
+	OR = {
+		religion = slaanesh
+		trait = norscan_patron_shornaal
+	}
+}
+
+follower_of_slaanesh = {
+	OR = {
+		secret_religion = slaanesh
+		open_follower_of_slaanesh = yes
+	}
+}
+
+open_follower_of_undivided = {
+	OR = {
+		religion = chaos
+	}
+}
+
+follower_of_undivided = {
+	OR = {
+		secret_religion = chaos
+		open_follower_of_undivided = yes
+	}
+}
+
+open_follower_of_any_chaos_gods = {
+	OR = {
+		open_follower_of_khorne = yes
+		open_follower_of_nurgle = yes
+		open_follower_of_tzeentch = yes
+		open_follower_of_slaanesh = yes
+		open_follower_of_undivided = yes
+	}
+}
+
+follower_of_any_chaos_gods = {
+	OR = {
+		open_follower_of_any_chaos_gods = yes
+		secret_religion_group = chaos_gods_group 
+	}
+}

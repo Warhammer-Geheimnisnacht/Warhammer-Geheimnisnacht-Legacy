@@ -1,0 +1,33 @@
+namespace = offmapmaintenance
+
+character_event = {
+	id = offmapmaintenance.1
+	hide_window = yes
+	trigger = {
+
+	}
+	is_triggered_only = yes
+
+	immediate = {
+		set_offmap_currency = {
+			offmap = slaanesh_warp
+			value = 0
+		}
+		set_offmap_currency = {
+			offmap = nurgle_warp
+			value = 0
+		}
+		set_offmap_currency = {
+			offmap = tzeentch_warp
+			value = 0
+		}
+		set_offmap_currency = {
+			offmap = khorne_warp
+			value = 0
+		}
+		set_offmap_currency = {
+			offmap = brayherd_warp
+			value = 0
+		}
+	}
+}

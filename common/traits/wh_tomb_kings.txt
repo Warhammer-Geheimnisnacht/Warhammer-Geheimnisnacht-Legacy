@@ -1,0 +1,69 @@
+
+khemri_mask = {
+	sex_appeal_opinion = 35
+	same_opinion = 5
+	customizer = yes
+}
+
+khemri_liche_priest = {
+	opposites = {
+		khemri_tomb_king
+		khemri_soldier
+	}
+	sex_appeal_opinion = -45
+	immortal = yes
+	cannot_marry = yes
+	fertility = -10.0
+	command_modifier = {
+		speed = 0.1 ##undead can march day and night#
+		morale_defence = 0.6  ##undead do not flee battle##
+	}
+	customizer = yes
+	ai_zeal = 100
+	ai_rationality = 75
+}
+
+khemri_tomb_king = {
+	opposites = {
+		khemri_soldier
+		khemri_liche_priest
+	}
+	sex_appeal_opinion = -45
+	immortal = yes
+	fertility = -10.0
+	combat_rating = 10
+	ambition_opinion = -25
+	same_opinion = -40
+    command_modifier = {
+		speed = 0.1 ##undead can march day and night#
+		morale_defence = 0.6  ##undead do not flee battle##
+	}
+	ruler_designer_cost = 0
+	ai_zeal = 100
+	ai_rationality = 75
+	customizer = yes
+}
+
+khemri_soldier = {
+	opposites = {
+		khemri_tomb_king
+		khemri_liche_priest
+	}
+	sex_appeal_opinion = -45
+	customizer = yes
+	random = no
+	immortal = yes
+	fertility = -10.0
+	cannot_inherit = yes
+	cannot_marry = yes
+   	 command_modifier = {
+			speed = 0.1 ##undead can march day and night#
+			morale_defence = 0.6  ##undead do not flee battle##
+		}
+	liege_opinion = 200
+	same_opinion = 200
+	ai_ambition = -100
+	ai_greed = -100
+	ai_zeal = 100
+	ai_rationality = 75
+}

@@ -1,0 +1,18 @@
+# c_vekheil
+
+# County Title
+title = c_vekheil
+
+# Settlements
+max_settlements = 4
+
+b_vekheil = castle
+b_isharat = temple
+b_macharil = city
+b_kythos_sar = castle
+
+# Misc
+culture = karondi
+religion = cytharai
+
+#History

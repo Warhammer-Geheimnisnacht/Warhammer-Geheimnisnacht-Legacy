@@ -1,0 +1,675 @@
+##### Balanced Traits
+warp_khorne = {
+	customizer = no
+	immortal = yes
+	random = no
+}
+warp_tzeentch = {
+	customizer = no
+	immortal = yes
+	random = no
+}
+warp_nurgle = {
+	customizer = no
+	immortal = yes
+	random = no
+}
+warp_slaanesh = {
+	customizer = no
+	immortal = yes
+	random = no
+}
+warp_brayherd = {
+	customizer = no
+	immortal = yes
+	random = no
+}
+beastman_despoiler = {
+	immortal = yes
+	cached = yes
+	diplomacy = 2
+	martial = 2
+	health=5
+	combat_rating = 20
+	random = no
+	customizer = yes
+	tolerates_chaos_gods_group=yes
+	chaos_gods_group_opinion=10
+	max_manpower_mult = 0.2
+	monthly_character_prestige = 1
+	command_modifier = {
+		morale_defence = 0.15
+		religious_enemy = 0.15
+		retreat = -0.2
+	}
+}
+mark_chaos = {
+	random = no
+	health = 5
+	martial = 5
+	stewardship = 5
+	learning = 5
+	intrigue = 5
+	diplomacy = 5
+	khorne_opinion = 10
+	nurgle_opinion = 15
+	tzeentch_opinion  = 15
+	slaanesh_opinion  = 10
+	monthly_character_piety = 0.2
+	command_modifier = {
+		pursue = 0.1
+		damage = 0.2
+		morale_offence = 0.1
+		defence = 0.2
+	}
+	is_visible = {
+		OR = {
+			AND = {
+				character = FROM
+			}
+			AND = {
+				OR = {
+					society_member_of = FROM
+					religion_group = chaos_gods_group
+				}
+			}
+		}
+	}
+}
+mark_khorne = {
+	random = no
+	martial = 5
+	khorne_opinion = 10
+	combat_rating = 5
+	monthly_character_piety = 0.05
+	command_modifier = {
+		pursue = 0.1
+		damage = 0.2
+		defence = -0.1
+		retreat = -0.2
+	}
+	is_visible = {
+		OR = {
+			AND = {
+				character = FROM
+			}
+			AND = {
+				OR = {
+					society_member_of = FROM
+					religion_group = chaos_gods_group
+				}
+			}
+		}
+	}
+}
+mark_nurgle = {
+	random = no
+	stewardship = 5
+	nurgle_opinion = 15
+	combat_rating = 5
+	monthly_character_piety = 0.05
+	command_modifier = {
+		morale_offence = 0.1
+		defence = 0.2
+		speed = -0.1
+		pursue = -0.2
+	}
+	is_visible = {
+		OR = {
+			AND = {
+				character = FROM
+			}
+			AND = {
+				OR = {
+					society_member_of = FROM
+					religion_group = chaos_gods_group
+				}
+			}
+		}
+	}
+}
+mark_tzeentch = {
+	random = no
+	learning = 3
+	intrigue = 2
+	tzeentch_opinion  = 15
+	monthly_character_piety = 0.05
+	command_modifier = {
+		damage = 0.1
+		defence = 0.2
+		morale_defence = -0.1
+		morale_offence = -0.2
+	}
+	is_visible = {
+		OR = {
+			AND = {
+				character = FROM
+			}
+			AND = {
+				OR = {
+					society_member_of = FROM
+					religion_group = chaos_gods_group
+				}
+			}
+		}
+	}
+}
+mark_slaanesh = {
+	random = no
+	diplomacy = 3
+	martial = 2
+	slaanesh_opinion  = 10
+	monthly_character_piety = 0.05
+	command_modifier = {
+		speed = 0.1
+		morale_defence = 0.2
+		defence = -0.1
+		retreat = -0.2
+	}
+	is_visible = {
+		OR = {
+			AND = {
+				character = FROM
+			}
+			AND = {
+				OR = {
+					society_member_of = FROM
+					religion_group = chaos_gods_group
+				}
+			}
+		}
+	}
+}
+
+
+chaos_knight = {
+	combat_rating = 15
+	religious = yes
+	customizer = yes
+}
+
+khorne_berserker = {
+	martial = 4
+	diplomacy = -2
+	combat_rating = 15
+	religious = yes
+	monthly_character_piety = 0.05
+	ai_rationality = -5
+	customizer = yes
+}
+
+norscan_warlord = {
+	customizer = yes
+	random = no
+	health = 2
+	martial = 2
+	diplomacy = 2
+	combat_rating = 10
+	ai_ambition = 5
+	ai_greed = 5
+	ai_honor = 2
+}
+
+chaos_chosen = {
+	customizer = yes
+	random = no
+	health = 5 #chosen are always watched by their gods
+	martial = 4 #chosen do one thing, fight
+	religious = yes
+	combat_rating = 20
+	ai_ambition = 45
+	ai_zeal = 20
+	ai_rationality = -15
+}
+
+#Everchosen Stuff
+everchosen = {
+	opposites = {
+		champion_undivided
+		champion_khorne
+		champion_nurgle
+		champion_slaanesh
+		champion_tzeentch
+		chosen_nurgle
+		chosen_slaanesh
+		chosen_tzeentch
+		chosen_khorne
+		prince_khorne
+		prince_nurgle
+		prince_tzeentch
+		prince_slaanesh
+	}
+
+	martial = 10
+	diplomacy = 10
+	stewardship = 10
+	intrigue = 10
+	learning = 10
+
+	cached = yes # Keep a cache of all trait holders, to use with the corresponding event trigger
+
+
+	chaos_gods_group_opinion = 60
+	vassal_opinion = 100
+	opposite_opinion = 50
+	ambition_opinion = -100
+	tolerates_chaos_gods_group = yes #Maybe this eliminates different rel. opinion penalties inside same group too?
+	monthly_character_prestige = 2.00
+	monthly_character_piety = 2.00
+	combat_rating = 50
+
+ 	command_modifier = {
+		morale_offence = 0.2
+		morale_defence = 0.2
+		damage = 0.2
+		speed = 0.2
+	}
+
+	ai_zeal = 100
+	ai_greed = -50
+	ai_honor = 75
+	ai_ambition = 100
+	ai_rationality = -100
+	customizer = yes
+	immortal = yes
+}
+
+champion_undivided = {
+	opposites = {
+		champion_khorne
+		champion_nurgle
+		champion_slaanesh
+		champion_tzeentch
+		chosen_nurgle
+		chosen_slaanesh
+		chosen_tzeentch
+		chosen_khorne
+	}
+	customizer = yes
+	random = no
+	health = 15
+	martial = 5
+	diplomacy = 5
+	stewardship = 5
+	intrigue = 5
+	learning = 5
+	religious = yes
+	chaos_opinion  = 40
+    chaos_gods_group_opinion = 5
+	combat_rating = 20
+	monthly_character_piety = 0.10
+	ai_zeal = 50
+	ai_ambition = 75
+	ai_greed = 10
+	ai_honor = -25
+	ai_rationality = -40
+}
+
+champion_khorne = {
+	opposites = {
+		champion_undivided
+		champion_nurgle
+		champion_slaanesh
+		champion_tzeentch
+		chosen_nurgle
+		chosen_slaanesh
+		chosen_tzeentch
+		chosen_khorne
+	}
+	customizer = yes
+	random = no
+	religious = yes
+	health = 15
+	martial = 15
+	sex_appeal_opinion = 10
+	khorne_opinion  = 10
+	opposite_opinion = -100
+	same_opinion = -75
+	ambition_opinion = -100
+	combat_rating = 20
+	monthly_character_piety = 0.10
+	ai_zeal = 75
+	ai_ambition = 25
+	ai_greed = -25
+	ai_honor = 50
+	ai_rationality = -20
+}
+
+champion_nurgle = {
+	opposites = {
+		champion_undivided
+		champion_khorne
+		champion_slaanesh
+		champion_tzeentch
+		chosen_slaanesh
+		chosen_tzeentch
+		chosen_khorne
+	}
+	customizer = yes
+	random = no
+	religious = yes
+	health = 15
+	martial = 10
+	stewardship = 5
+	sex_appeal_opinion = -15
+	nurgle_opinion  = 15
+	opposite_opinion = -50
+	same_opinion = 75
+	ambition_opinion = -100
+	combat_rating = 25
+	monthly_character_piety = 0.10
+	ai_zeal = 75
+	ai_ambition = -25
+	ai_greed = -100
+	ai_honor = 100
+	ai_rationality = -30
+}
+
+champion_tzeentch = {
+	opposites = {
+		champion_undivided
+		champion_nurgle
+		champion_slaanesh
+		champion_khorne
+		chosen_nurgle
+		chosen_slaanesh
+		chosen_tzeentch
+		chosen_khorne
+	}
+	customizer = yes
+	random = no
+	religious = yes
+	health = 15
+	intrigue = 5
+	learning = 10
+	sex_appeal_opinion = -5
+	general_opinion = -10
+	opposite_opinion = -100
+	same_opinion = -50
+	ambition_opinion = -100
+	combat_rating = 20
+	monthly_character_piety = 0.10
+	ai_zeal = 25
+	ai_ambition = 75
+	ai_greed = 50
+	ai_honor = -100
+	ai_rationality = -30
+}
+
+champion_slaanesh = {
+	opposites = {
+		champion_undivided
+		champion_nurgle
+		champion_khorne
+		champion_tzeentch
+		chosen_nurgle
+		chosen_slaanesh
+		chosen_tzeentch
+		chosen_khorne
+	}
+	customizer = yes
+	random = no
+	religious = yes
+	health = 15
+	martial = 10
+	intrigue = 5
+	sex_appeal_opinion = 10
+	slaanesh_opinion = 5
+	opposite_opinion = -50
+	same_opinion = -25
+	ambition_opinion = -100
+	combat_rating = 20
+	monthly_character_piety = 0.10
+	command_modifier = {
+		speed = 0.01
+		morale_defence = -0.05
+		damage = 0.01
+	}
+	ai_zeal = -50
+	ai_ambition = 25
+	ai_greed = 75
+	ai_honor = -50
+	ai_rationality = -30
+}
+
+chosen_khorne = {
+	opposites = {
+		champion_undivided
+		champion_nurgle
+		champion_slaanesh
+		champion_tzeentch
+		chosen_nurgle
+		chosen_slaanesh
+		chosen_tzeentch
+		champion_khorne
+	}
+	customizer = yes
+	random = no
+	religious = yes
+	health = 20
+	martial = 15
+	sex_appeal_opinion = 10
+	khorne_opinion = 15
+	opposite_opinion = -100
+	same_opinion = -75
+	ambition_opinion = -100
+	monthly_character_prestige = 0.35
+	monthly_character_piety = 0.25
+	combat_rating = 30
+	command_modifier = {
+		morale_offence = 0.075
+		morale_defence = -0.02
+		damage = 0.01
+	}
+	ai_zeal = 100
+	ai_ambition = 50
+	ai_greed = -50
+	ai_honor = 75
+	ai_rationality = -80
+}
+
+chosen_nurgle = {
+	opposites = {
+		champion_undivided
+		champion_khorne
+		champion_nurgle
+		champion_slaanesh
+		champion_tzeentch
+		chosen_slaanesh
+		chosen_tzeentch
+		chosen_khorne
+	}
+	customizer = yes
+	random = no
+	religious = yes
+	health = 20
+	martial = 10
+	stewardship = 5
+	sex_appeal_opinion = -15
+	nurgle_opinion = 25
+	opposite_opinion = -50
+	same_opinion = 75
+	ambition_opinion = -100
+	monthly_character_prestige = 0.15
+	monthly_character_piety = 0.15
+	combat_rating = 35
+	command_modifier = {
+		morale_offence = -0.01
+		morale_defence = 0.05
+		defence = 0.01
+	}
+	ai_zeal = 75
+	ai_ambition = 40
+	ai_greed = -100
+	ai_honor = 100
+	ai_rationality = -70
+}
+
+chosen_tzeentch = {
+	opposites = {
+		champion_undivided
+		champion_khorne
+		champion_nurgle
+		champion_slaanesh
+		champion_tzeentch
+		chosen_nurgle
+		chosen_slaanesh
+		chosen_khorne
+	}
+	customizer = yes
+	random = no
+	religious = yes
+	health = 20
+	intrigue = 5
+	learning = 10
+	sex_appeal_opinion = -10
+	general_opinion = -10
+	opposite_opinion = -100
+	same_opinion = -50
+	ambition_opinion = -100
+	monthly_character_prestige = 0.25
+	monthly_character_piety = 0.35
+	combat_rating = 30
+	command_modifier = {
+		random = 0.05
+	}
+
+	ai_zeal = 25
+	ai_ambition = 75
+	ai_greed = 50
+	ai_honor = -100
+	ai_rationality = -70
+}
+
+chosen_slaanesh = {
+	opposites = {
+		champion_undivided
+		champion_nurgle
+		champion_khorne
+		champion_tzeentch
+		chosen_nurgle
+		champion_slaanesh
+		chosen_tzeentch
+		chosen_khorne
+	}
+	customizer = yes
+	random = no
+	religious = yes
+	health = 20
+	martial = 5
+	intrigue = 10
+	sex_appeal_opinion = 25
+	slaanesh_opinion = 5
+	opposite_opinion = -50
+	same_opinion = -25
+	ambition_opinion = -100
+	monthly_character_prestige = 0.25
+	monthly_character_piety = 0.25
+	combat_rating = 30
+	command_modifier = {
+		speed = 0.01
+		morale_defence = -0.05
+		damage = 0.01
+	}
+	ai_zeal = -50
+	ai_ambition = 60
+	ai_greed = 75
+	ai_honor = -50
+	ai_rationality = -70
+}
+
+prince_khorne = {
+	opposites = {
+	prince_nurgle
+	prince_slaanesh
+	prince_tzeentch
+	}
+	customizer = no
+	random = no
+	immortal = yes
+	martial = 20
+	sex_appeal_opinion = 15
+	khorne_opinion = 25
+	opposite_opinion = -100
+	same_opinion = -100
+	ambition_opinion = -100
+	combat_rating = 50
+	ai_zeal = 100
+	ai_greed = -50
+	ai_honor = 75
+	ai_ambition = 100
+	ai_rationality = -100
+}
+
+prince_nurgle = {
+	opposites = {
+	prince_khorne
+	prince_slaanesh
+	prince_tzeentch
+	}
+	customizer = no
+	random = no
+	immortal = yes
+	martial = 10
+	stewardship = 10
+	sex_appeal_opinion = -50
+	nurgle_opinion = 50
+	opposite_opinion = -30
+	same_opinion = 100
+	ambition_opinion = -100
+	combat_rating = 55
+	ai_zeal = 100
+	ai_ambition = -50
+	ai_greed = -100
+	ai_honor = 100
+	ai_rationality = -70
+}
+
+prince_tzeentch = {
+	opposites = {
+	prince_nurgle
+	prince_slaanesh
+	prince_khorne
+	}
+	customizer = no
+	random = no
+	immortal = yes
+	intrigue = 10
+	learning = 10
+	sex_appeal_opinion = -15
+	tzeentch_opinion = 25
+	general_opinion = -20
+	opposite_opinion = -100
+	same_opinion = -75
+	ambition_opinion = -100
+	combat_rating = 40
+	ai_zeal = 50
+	ai_greed = 100
+	ai_honor = -200
+	ai_ambition = 100
+	ai_rationality = -100
+}
+
+prince_slaanesh = {
+	opposites = {
+	prince_nurgle
+	prince_khorne
+	prince_tzeentch
+	}
+	customizer = no
+	random = no
+	immortal = yes
+	martial = 10
+	intrigue = 10
+	sex_appeal_opinion = 75
+	slaanesh_opinion = 10
+	opposite_opinion = -75
+	same_opinion = -35
+	ambition_opinion = -100
+	combat_rating = 50
+	ai_zeal = -75
+	ai_greed = 100
+	ai_honor = -75
+	ai_ambition = 100
+	ai_rationality = -100
+}

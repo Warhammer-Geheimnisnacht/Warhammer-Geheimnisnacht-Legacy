@@ -1,0 +1,34 @@
+# c_naggarond
+
+# County Title
+title = c_naggarond
+
+# Settlements
+max_settlements = 7
+
+b_naggarond = castle
+b_urlnath = city
+b_aln_karond = temple
+b_ghalvin = castle
+b_cyndinsel = city
+b_naggrun_hag = temple
+#b_naggrun = castle
+
+# Misc
+culture = naggarondi
+religion = cytharai
+
+#History
+1.1.1 = {
+    b_naggarond = ca_naggarond
+	build_wonder = wonder_black_tower
+	set_wonder_stage = 4
+	build_wonder_upgrade = upgrade_throne_fancy
+	build_wonder_upgrade = upgrade_hidden_passageways
+    build_wonder_upgrade = upgrade_dueling_room
+    build_wonder_upgrade = upgrade_studded_bastions
+    build_wonder_upgrade = upgrade_royal_custodian
+    build_wonder_upgrade = upgrade_soaring_fortresses
+    build_wonder_upgrade = upgrade_torture_chamber
+    build_wonder_upgrade = upgrade_retinue
+}

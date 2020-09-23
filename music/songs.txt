@@ -1,0 +1,271 @@
+song = {
+	name = "crusaderkings2_maintitle.ogg"
+	song_name = "Sigmar's Glorious Empire"
+	chance = {
+		factor = 1
+	}
+}
+song = {
+	name = "WHG_MainTheme(aux-01).ogg"
+	song_name = "Geheimnisnacht"
+	chance = {
+		factor = 1
+	}
+}
+song = {
+	name = "WHG_MainTheme(aux-02).ogg"
+	song_name = "Day of Mystery"
+	chance = {
+		factor = 1
+	}
+}
+song = {
+	name = "WHG_MainTheme(ambient-01).ogg"
+	song_name = "Winds of Magic"
+	chance = {
+		factor = 1
+	}
+}
+song = {
+	name = "WHG_MainTheme(ambient-02).ogg"
+	song_name = "Garden of Morr"
+	chance = {
+		factor = 1
+	}
+}
+song = {
+	name = "WHG_Chaos(main).ogg"
+	song_name = "Storm of Chaos"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR ={
+				NOT = {	religion_group  = chaos_gods_group }
+				NOT = { any_current_enemy = { religion_group  = chaos_gods_group } }
+			}
+		}
+	}
+}
+song = {
+	name = "WHG_Chaos(ambient-01).ogg"
+	song_name = "Ruinous Powers"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR ={
+				NOT = {	religion_group  = chaos_gods_group }
+				NOT = { any_current_enemy = { religion_group  = chaos_gods_group } }
+			}
+		}
+	}
+}
+song = {
+	name = "WHG_Chaos(aux-01).ogg"
+	song_name = "The Dark Gods"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR ={
+				NOT = {	religion_group  = chaos_gods_group }
+				NOT = { any_current_enemy = { religion_group  = chaos_gods_group } }
+			}
+		}
+	}
+}
+song = {
+	name = "WHG_Empire(main).ogg"
+	song_name = "Battle of Hel Fenn"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			NOT = {	culture_group = imperial_group }
+			NOT = { any_current_enemy = { culture_group = imperial_group  } }
+		}
+	}
+}
+song = {
+	name = "WHG_Empire(aux-01).ogg"
+	song_name = "Age of Three Emperors"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			NOT = {	culture_group = imperial_group }
+			NOT = { any_current_enemy = { culture_group = imperial_group  } }
+		}
+	}
+}
+song = {
+	name = "WHG_Dwarfs(main).ogg"
+	song_name = "Ar'Uzkul"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			NOT = {	culture_group = dwarf_group  }
+			NOT = { any_current_enemy = { culture_group = dwarf_group   } }
+		}
+	}
+}
+song = {
+	name = "WHG_Dwarfs(aux-01).ogg"
+	song_name = "Ancestor Gods"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			NOT = {	culture_group = dwarf_group }
+			NOT = { any_current_enemy = { culture_group = dwarf_group  } }
+		}
+	}
+}
+song = {
+	name = "WHG_Dwarfs(claustro-01).ogg"
+	song_name = "Battle of Blackfire Pass"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			NOT = {	culture_group = dwarf_group }
+			NOT = { any_current_enemy = { culture_group = dwarf_group  } }
+		}
+	}
+}
+song = {
+	name = "WHG_Dwarfs(claustro-02).ogg"
+	song_name = "Worlds Edge Mountains"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			NOT = {	culture_group = dwarf_group }
+			NOT = { any_current_enemy = { culture_group = dwarf_group  } }
+		}
+	}
+}
+song = {
+	name = "WHG_Dwarfs(claustro-03).ogg"
+	song_name = "Dammaz Kron"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			NOT = {	culture_group = dwarf_group }
+			NOT = { any_current_enemy = { culture_group = dwarf_group  } }
+		}
+	}
+}
+song = {
+	name = "WHG_Elves(main).ogg"
+	song_name = "Twilight's Tide"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR = {
+				NOT = {	culture_group = asrai_group  }
+				NOT = { any_current_enemy = { culture_group = asrai_group   } }
+				NOT = {	culture_group = asur_group   }
+				NOT = { any_current_enemy = { culture_group = asur_group    } }
+				NOT = {	culture_group = druchi_group   }
+				NOT = { any_current_enemy = { culture_group = druchi_group    } }
+			}
+		}
+	}
+}
+song = {
+	name = "WHG_Elves(aux-01).ogg"
+	song_name = "Fortress of Dawn"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR = {
+				NOT = {	culture_group = asrai_group  }
+				NOT = { any_current_enemy = { culture_group = asrai_group   } }
+				NOT = {	culture_group = asur_group   }
+				NOT = { any_current_enemy = { culture_group = asur_group    } }
+				NOT = {	culture_group = druchi_group   }
+				NOT = { any_current_enemy = { culture_group = druchi_group    } }
+			}
+		}
+	}
+}
+song = {
+	name = "WHG_Elves(ambient-01).ogg"
+	song_name = "Citadel of Dusk"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR = {
+				NOT = {	culture_group = asrai_group  }
+				NOT = { any_current_enemy = { culture_group = asrai_group   } }
+				NOT = {	culture_group = asur_group   }
+				NOT = { any_current_enemy = { culture_group = asur_group    } }
+				NOT = {	culture_group = druchi_group   }
+				NOT = { any_current_enemy = { culture_group = druchi_group    } }
+			}
+		}
+	}
+}
+song = {
+	name = "WHG_Greenskins(main).ogg"
+	song_name = "Waaaagh!"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR = {
+				NOT = {	culture_group = goblin_group  }
+				NOT = { any_current_enemy = { culture_group = goblin_group   } }
+				NOT = {	culture_group = orc_group   }
+				NOT = { any_current_enemy = { culture_group = orc_group    } }
+			}
+		}
+	}
+}
+song = {
+	name = "WHG_Greenskins(aux-01).ogg"
+	song_name = "Under a Crooked Moon"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR = {
+				NOT = {	culture_group = goblin_group  }
+				NOT = { any_current_enemy = { culture_group = goblin_group   } }
+				NOT = {	culture_group = orc_group   }
+				NOT = { any_current_enemy = { culture_group = orc_group    } }
+			}
+		}
+	}
+}
+song = {
+	name = "WHG_Greenskins(ambient-01).ogg"
+	song_name = "Beware the Badlands"
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR = {
+				NOT = {	culture_group = goblin_group  }
+				NOT = { any_current_enemy = { culture_group = goblin_group   } }
+				NOT = {	culture_group = orc_group   }
+				NOT = { any_current_enemy = { culture_group = orc_group    } }
+			}
+		}
+	}
+}
+song = {
+	name = "WHG_Misc(misc-01).ogg"
+	song_name = "Life on the Reik"
+	chance = {
+		factor = 1
+
+	}
+}

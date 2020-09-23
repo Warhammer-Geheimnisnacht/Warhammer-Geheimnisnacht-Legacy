@@ -1,0 +1,1273 @@
+WH: Geheminisnacht - legacy
+The legacy version has been built by Komioski and his team. It has been renamed to Legacy in order to avoid confusion with the CK3 version.
+------------------------------------------------------
+TABLE OF CONTENTS
+------------------------------------------------------
+- NOTES/KNOWN ISSUES
+- CHANGELOG HISTORY
+    - v1.2.6
+    - v1.2.5
+    - v1.2.4
+    - v1.2.3
+    - v1.2.2
+    - v1.1.6
+    - v1.1.5
+    - v1.1.3
+    - v1.0.1
+    - v1.0.0
+- RELEVANT CHANGES BEFORE LEGACY
+- FREQUENTLY ASKED QUESTIONS
+- DEVELOPMENT TOOLS
+------------------------------------------------------
+CURRENT CHECKSUM
+------------------------------------------------------
+- PUBLIC RELEASE = LRQY
+------------------------------------------------------
+NOTES/KNOWN ISSUES
+------------------------------------------------------
+- Artifact_spawns have not yet been adjusted to account for the 250+ new artifacts
+- Not all Buildings have been changed to location culture yet
+- All chaos and norscan buildings need to be examined/overhauled
+- Daemon Retinues need to be added/overhauled
+- Wonder Upgrades need to be added, many wonders have historical/unique features in lore that havent been added, current upgrades are placeholders
+- Monster hunt duels need to be tied to the duel system like the green knight instead of being trait based
+- Everchosen event-chain for players has not been overhauled
+- ways to convert to chaos religions as undivided beastmen or more stuff for undivided beastmen (khorngor etc.)
+- Add Henri le Massif
+- Need to add "Hold miskha-kal" decision for praag opera house wonder
+- Add more dawi holds
+- Missing lots of localization
+------------------------------------------------------
+Legacy_v1.2.6:
+------------------------------------------------------
+- Fixed Pillage Beastman Decision
+- Slightly buffed beastmen buildings
+- Fixed Beast Paths localization
+- Adjusted Beastmen CBs
+- Added Despoiler trait and bloodline for beastmen
+- Removed Duplicate Akendorf
+- Slightly lowered beastman commander limit
+- Fixed Gor-Rok turning Feudal on game start
+- Blocked Beastmen from traditional Chaos Raid CB
+- Overhauled Beastmen event pics
+- Polished the Beastmen Pilgrimage
+- Fixed Gui error (damn hardcoded GUI had to recreate the tribal interface)
+------------------------------------------------------
+Legacy_v1.2.5:
+------------------------------------------------------
+- Must be a Chosen in order to summon a champion from the offmap powers
+- Kislev Retinues have been overhauled to bring them in line with the nearby factions:
+    - Zastyvshiy Warriors, archers and light infantry with a 40% offensive and 20% defensive/morale bonus
+    - Kossars, light infantry and archers with a 20% offensive/defensive and morale bonus
+    - Kremlin Guard, Heavy infantry and Pikemen with a 20% offensive/defensive and morale bonus
+    - Svistyashchiy Cavalry, light cavalry and horse archers with a 20% offensive/defensive and morale bonus
+    - Pochtennyy Warbears, heavy cavalry and war beasts with a 80% offensive and 20% defensive/morale bonus
+    - Slavnyy Winged Lancers, light cavaly and heavy cavalry with a 100% offensive and 20% defensive/morale bonus
+    - Urugan Cannons, artillery with 100% offensive/defensive bonus
+- Added "Exalted Hero" minor title for all Chaos and Norscan Rulers
+- Added the Bokha Palace wonder for Kislev
+- Added the Praag Opera House for the ungols/kislev <-- This is going to be fun
+- Tribal Shipyards require lower tech levels to build
+- Removed 1 of the castle baronies from Antoch
+- Beastmen trait fertility bonus lowered from 50% to 20%
+- Adjusted chaos retinues
+- Allowed a few more commanders for beastmen
+- Nerfed Herdstone Building
+- Restored the on_action witchunter event to hunt down lahmian brothels
+- Dark Crystal Ambition event converted to a decade pulse on_action
+- Malekith and Fay Enchantress can no longer join the Cult of Pleasure
+- Fixed the reclaim the staff of jade cb
+- Changed Jozans concubines to be chaos undivided instead of Slaaneshi and Tzeentch
+- Stopped The building option for non-owned provinces for warpstone meteors
+- Fixed Warband Nicknames
+- Adjusted the Duel Calculations
+- Made kislev absolute cognatic
+- No more female inheritance for kurgans
+- Norscan religion is now feminist
+- Made kislev have full status of women law
+- Made fearfrost compatible with our current tiers of weapons
+    - Also added a female requirement in as of the lore
+- Gave the Kislev Queen higher magic potential
+- Also gave her current heir magic potential
+- Made vampires visible in the Ruler Designer
+- All Artifacts that had GFXs should now have all their sprites added (Any missing ones is just missing GFX)
+- Cold One Mount finally has localization
+- "Train a Cold One" can now only be used if you dont own a Cold One
+- "Train a War Bear" can now only be used if you dont own a War Bear
+- Armour of Fortune now has its localization
+- Visible and Hidden Vampire traits are now removed from the RD
+- Assigned all of the special traits to their characters
+- Custom Rank Icons for Chaos Warbands and Cults added
+- Removed the Immortal Trait from the RD
+- Added court mage title, the court mage will attempt to teach children in the court magic, can only be assigned if magic is legal generally, or for a certain gender
+- Ai will grant this title and the witchhunter title via decision as the ai apparently doesn’t hand out minor titles on its own
+- Magic inheritance event now checks true_father_even_if_dead, so hidden bastards will get the correct genetics
+- The bloodline of Miska the first ice witch makes women much more likely to have magic potential if they are of the correct dynasty and born in kislev
+- Removed misplaced is_ruler check from learn magic decision as the intention was to allow courtiers to take it, also edited potential so Araby men can take the decision when vassals
+- Magic power modifier now gives combat rating
+- Made magic potential much harder to pass on to a child in general
+- Lore of ice will no longer spawn on randomly generated mages, its not a wind of magic like the other but a specific practice of magic tied to the land of Kislev
+- Magic potential is no longer a genetic trait, we already had an event giving hidden magic potential
+- Adult characters who are generated with magic will also have their magic manifest
+- Beastmen have a small chance of being born or generated as a bray shaman
+- Random elf mages now can spawn as either casters of high magic, dark magic, light lore or shadow lore to match learning events
+    - Asur can’t get shadow magic or dark magic and vice versa for Druchii
+- Rewrote siege magic as siege pulse on action only triggers if there is a commander on the centre flank of a siege, now works of individual mages entering the province
+- Changed magical devastation to be a stacking modifier, so longer a siege goes on the more damage is caused by the mages
+- Fixed levelling up magic power not setting the cl variable correctly, this is used in the siege magic events
+- Amazon males now get fully handled by the racial system and are given the traits to prevent marriage and holding land
+    if they spawn in a non amazon court human, e.g. the jade vampire general they will switch culture and religion
+- Removed all male amazons landed under a Miyan Halfling liege, the amazon mechanics just don’t work with male rulers
+- All rebel leaders of amazon religion are now female and tribal government
+- Flower wars give much more decadence reduction
+- All male amazons in the history files are setup correctly as disinherited
+- Amazons can no longer take consorts, as all men are incapable in the culture and incapable men cant get someone pregnant outside of events
+- Amazon city holding art changed to be the same as lizardmen, as the non looted amazon one was the same as the looted one and always on fire
+- Elven and dwarf fertility is no longer a 50 chance of becoming infertile with every child, the chance scales with number of children and the overall fertility of the mother
+    - However even not becoming infertile will take a small amount of fertility away permanently
+- Grail knights are now immune to random mutations
+- Fixed an issue where witch hunters could go after ice witches
+- Temple vassals outside of old world religions will correctly use open elective rather than gavelkind
+- You can only duel other members of your race over strong claims
+- Chaos rulers can duel each other for strong claims even when not tribal
+- Chaos fortresses slightly increase the max population for Nomads
+- Gave Prince Fandranrion, one of the main High Elf colony rulers a claim on the other de jure duchy of Arnheim
+    - his father was the previous ruler and he has a claim on the non-existent kingdom
+- Fixed slaanesh artefact boon making undivided go to negative favour
+- All champion and chosen trait have 15 health minimum
+- Skulls taken in battle can now be given to Khorne
+- Support has been re added for humans having portraits outside their cultures default
+    -Certain cultures e.g. Amazon and Albion are exluded due to war paint and tattoos being part of the portrait itself
+- Nurgles blessing when you have diseases now also counteracts the combat rating reduction
+- Summon Daemon decision removed for those who have access to daemons through offmap powers
+- Female orcs and goblins are now given the snotling trait again rather than orc or goblin
+- The marriage events now also check for snotling, goblin and orc traits as a few cases of ruler marrying snotlings has been seen
+- The Fimir 99% chance to change to male will no longer happen if there are none in the lieges court. This stops the game continuously spawning in new women to be married
+- Repaired some artifacts missing slots
+- Join Defence Against Black Crusade decision now works
+- Lowered combat_rating bonuses across all traits
+- Added "beastmen_capital_refill" settlement decision to help Migratory Herds former lands survive
+- Fixed some vampire bloodlines
+- Added a unique "building" for Daemon Princes
+- Fixed Beastman gov Flavour
+- Soul Suck decision as a daemon prince now gives 50 prestige
+- Added an xp route to becoming a mage
+    - if you do not have enough learning you get will need 15xp to pass
+    - This ensures if you start training young enough, you could pass
+    - But when older your forced to be relied on your learning
+    - This is only when you are being taught by a mage. Self teaching has not been changed
+    - If you start training too late you have to rely on the riskier experiments to gain high learning
+    **WARNING** you could have incredibly bad luck. Thats warhammer for you
+- Removed the beastman_baron_cleaning decision and replaced it with the traditional nomad pillage_settlement
+- shared offmap decision "claim_chaos_undivided" available for warherds if chaos undivided beastman
+- Added negative global_revolt_risk to bretonnian and imperial culture modifiers
+- Increased province count in Obo valley
+- Overhauled Beastmen CBs
+- Placed Herdstones in lore-friendly locations
+- Balanced Kislev and Praag unique castle buildings
+- Balanced Bretonnian unique castle buildings
+- Balanced Norscan unique castle buildings
+- Border Princes Confederations are no longer feudal only
+- Court Council background GUI now supports 5 council jobs
+- Fixed "Guardian of the Deep" minor title
+- Brief non-aggression pact now requires only +50 opinion to make alliances easier
+- Adjusted Tech Values across the world
+- Slightly nerfed the Dawi settlement fort values
+- Added the "Dawi Karak" wonder and began adding them to lore friendly locations, still missing **many** though
+- Added seige events for chaos ( separate chains for beastmen and traditional chaos )
+- Rulers who pledge to defend against a Black Crusade and then convert to chaos afterwards will no longer join the defender
+- Made a few edits so siege magic doesnt start till you have been sieging a province for a month, stops you leaving a line of siege modifiers wherever you walk in enemy territory
+- Fixed a bug where Black Crusades could sometime not clear down the religion head title after a crusade ended until the current ruler died or 10 years after the initial decision was taken
+- Added starting forces for the two landed daemon princes at game start
+- Increased learning to 15 for tetyana so that she can teach her childeren. removed magic_potenital from an incorrect character
+- Matrilineal inheritance is kinda broken, so its now changed to patrinial with our own override
+- Balanced Unique Border Prince Buildings
+- Fixed missing Brayherd "journey to the dark heart"
+- Balanced Erengrad
+- Fixed Gor Rok portrait
+- Added a "Holy Ziggurat" wonder to Itza, the first of several wonders for the lizardmen
+- No holy wars vs dwarfs
+- Made chaos less likely to use the chaos raid cb when they have a ton of favour already
+- Made the ai willing to use county conquest vs beastmen
+- Offmap Favour now resets on death
+- Stopped the high elves electing the everqueen or everqueen heir
+- All special Dawi buildings are now wonders
+- Overhauled beastmen buildings and balanced them
+- Herdstones are now unique buildings tied to specific locations
+------------------------------------------------------
+Legacy_v1.2.4:
+------------------------------------------------------
+- Added the missing government flavor for the tzardom gov
+- Daemons of any type can no longer join Warbands
+- Made the Everqueen an Asur Mage with the appropriate Lore
+- No Everqueen or Everchild shall join the Cult of Pleasure
+- Modified Favour gain amounts to slow progress, this should allow us to avoid cooldown timers but still stop characters abusing the system
+- Daemon princes in a warband can now complete their change focus mission
+- Asrai will no longer join the Cult of Pleasure if they are exposed to it
+- Children’s crusade localisation and bloodline is no longer identical to the base game
+- Children’s crusade leader set to chaos court gov if they are a nomad culture so they don’t become raiding adventurers, raid someone, get beaten and lose their title
+- If a friend of a mage apprentice dies it will check the friend is actually the person teaching them magic before removing the mage apprentice trait
+- Mage apprentices can now marry normally
+- Ice Witches no longer have a fertility penalty
+- The defender of the ulthuan_invasion cb will have direct duke and king vassals who the same culture group and religion join them in the defence, looks to stop Malekith winning every time
+- The cheating death mechanic increments a variable on the character so we can see how often they die
+- declare_black_crusade logs to a global variable each type of crusade declared through the game
+- Fimir caste trait assignment fixed for random fimir
+- Fixed Morgrim of c_kholim to properly set historical_nomad = yes to prevent him from going landless
+- Believe I have fixed the Daemon Princes culture and province culture at game start
+- Created a "become warherd" fallback decision to automatically convert the ai beastmen if needed, and for players to choose to convert to warherd if they have no other way to do so
+- Added customizable localization to add you health and fertility value to the character tooltip (shown when you hover with your curser above a portrait)
+    The scales go from
+    0-30.0 health / 0%-300% fertility in 0.5 or 5% increments.
+    Any values below the minimum value be shown as a 0
+    Any values above the maximumvalue  will be shown as 30.0 / 300%
+    (these max caps shouldnt be reachable in a normal game anyway)
+    If a value isnt divisable by 5 it will be shown as the next lower value
+    (ie. health of 5.8 will be shown as 5.5)
+- Defensive Pact Localization should be fixed to no longer show a variable of 10000
+- Adjusted Beastmen CB, Doesnt steal kingdoms anymore and sticks to the Dejure borders, capturing your opponent is no longer auto victory
+- Dire Wolves retinue now gets proper modifier
+- Adjusted the Antideath trait to fit more than just tomb kings
+- The Fay Enchantress now has a modified version of the antideath effect
+- Made absolutely sure only skinks can get the defective trait
+- Tzeentchian Sacrifice should now kill the prisoner
+- Added the ability for players to shift to chaos undivided as long as they dont have a mark of chaos and have enough prestige
+- Summoning Daemons inside prisoner difficulty now scales with your chaos rank
+    Regular - 50/50
+    Cultist - 55/45
+    Champion - 75/50
+    Chosen - 85/15
+    Daemon Prince - 100/0
+    Everchosen - 100/0
+- Capturing the Phoenix King no longer auto wins the war for Ulthuan
+- Summon Tomb King Decision Added Back
+- Gor-Rok Nickname Added
+- Baragor Nickname Fixed
+- Nagashizzar potential Religion check Fixed
+- Fimir Building Localizations Fixed
+- Event Titles For Battle & Siege Magic tutorial events
+- Hopefully Cultist event chains have been fixed
+- Updated all government checks to check for the new chaos governments
+- Added everything required for the city looting/razing events for chaos but deactivated for now as we still get CTDs
+------------------------------------------------------
+Legacy_v1.2.3:
+------------------------------------------------------
+- Everyone in the necromantic religion group can activate/use the Nagashizzar wonder
+- Fixed beastmen_artifact_stonecrusher_mace
+- Fixed d_glanborielle the beastman would become a landless independent. Moved the date of the title way earlier so that the vassalize date is after the liege geting the title. Also removed the law rules
+- You will no longer get ask to spill blood if your not a Khorne worshiper and the ai should not ask you to join a cult if your already seeking one this should fix a lot of the issues with cults
+- Using potion of healing now removes symptom traits
+- Removed DLC lock on offmap powers, except brayherd, as that uses Jade Dragon events
+- Fixed Artifacts able to be sent back to the offmaps for more favour
+- Allowed norcscans who follow chaos to use the artifacts given
+- Fixed player being able to take boons they shouldn’t have while a cultist
+- Deleted mean time to happen events to become Champion/Chosen/Prince that didn’t check trait properly and would set princes and chosen back down to Champion
+- Champion/Chosen/Prince boons require you actually have the favour needed before letting you choose them
+- Chaos Undivided Champion no longer requires you have 4x as much favour as the other Champion boons
+- The Everchosen can’t take the Champion/Chosen/Prince boons, as it would make them stop being the Everchosen
+- Favour gain from donating artifacts nerfed heavily, now scales from 50 to 1000 for quality 3-10 artifacts
+- Beastmen get favour with the Brayherds when winning a chaos raid
+- Proper trigger in the offmap decisions from_from_potential added as the ai bypasses the display trigger and can use decisions regardless without strict checks
+- Crusade interface fixed
+- Fixed a few invalid modifiers from misspellings in artifacts
+- Search for smith decision now works
+- Some cult scripted effects moved from 00_scripted_effects to wh_scripted_effects
+- Dwarfs cannot appoint elder title to people under 150
+- Chaos Cults had misspelling in event giving duelist trait, preventing you from getting the trait
+- Sleeping Slann event now only triggers for lizardmen
+- Orcs trying to make goblin provinces orcish and vice versa now works
+- Coronations wont spawn people with the chaos crusader trait
+- daemonic_subjugation cb now costs scaling amount of favour
+    500 at medium doom, 250 at high and no cost at very high
+- Doom tracker UI now updates to let you know if daemon invasions and black crusades are possible or not
+- Fixed Seagit and Freeboota to let thim hold citys and castles
+- Fixed the Ancestor Worship decision for dwarfs
+- Fixed Brayherd Artifacts
+- Fixed Beastman Pilgrimage to the Dark Heart
+- Added Beastman Jabberslythe Hunt
+- Updated Chaos God Traits with the values of +2/+3/+5/+2 monthly grace for Chosen/Champion/Prince/Lore
+- Adjusted some retinue cost to stop chariots spam for Beastmen, and lower gunner spam in the Empire
+- Adjusted the Blood axe Tribe in the Southlands
+- Moved Erengrad Under the Translynsk Kingdom instead of Kislev, and made it the capitol of said kingdom
+- Lowered the Brief Non-Aggression Pact opinion requirement from +75 to +50
+- Should have fixed the insane Beastman Warherd sizes
+- Integrated upgraded version "WH-More-Imperial-Claimant" sub-mod. it adds:
+    tons of new Kingdom and Empire tier titles for "The Empire"
+    3 game rules so you can turn them on for just the Empires or for both the Kingdoms and Empires; off is the default
+    two decisions to restore Solland and Drakwald and reobtain their Runefangs, until the proper quest can be written
+    they have the Imperial Reconquest and you need two kingdom titles and cannot already be an emperor
+    theres also a ton of new flags
+- Added the missing government flavor for the new chaos govs, everqueen gov, norscan gov, and freeboota gov
+- Fixed the Oak of Ages
+------------------------------------------------------
+Legacy_v1.2.2:
+------------------------------------------------------
+- Restructered Changelog
+- Added the "Dammaz Kron" an event/decision logging tool for error reporting
+- Began reworking Buildings to refer to the locations culture and not its rulers. This should stop buildings dissapearing and will completed in the first hotfix
+- Added "the voice of Tzeentch" modifiers
+- Reworked the Childrens Crusade to fire for tzeentchian children under 16. They will traverse the chaos wastes seeking support before assaulting Kislev
+- Added a Daemon Prince of Tzeentch in the chaos wastes, he rules over "The Ragged Maze". NOTE: Since Chaos CBs will now be tied to the winds of magic it will be a boring start
+- Moved the "Inevitable City" Wonder to "The Ragged Maze"
+- Added a Daemon Prince of Nurgle in the chaos wastes, he rules over "Cold Mire"
+- Added the Gallows Tree wonder and placed it in "Cold Mire"
+- Fixed The minimap, you can now click again!
+- Reworked the Minimap Art
+- Added the initial version of the "Renounce Imperial Throne" decision. Right now its players only in case you dont wish to be Emperor
+- Edited the DNA of Valka the Serpent when she becomes a daemon prince she will now have a better potrait
+- Added religion icons for Mapmode and topbar for the following religions:
+    Dwarf
+    Cadai
+    Cytharai
+    Skaven
+    Maw
+    Celestial
+    Halfling
+    Nehekharan
+- Updated the vampire piety icon and topbar religion buttons
+- pet_consort trait purged from the gamefiles
+- old_ones_group religion group (amazons and old ones) now use indian interface
+- Changed all native Orcs in Lustria to the Savage culture
+- Added three Freeboota and three Seagit characters
+    My favorite Freeboota is in lustria, a dangerous buccaneer who relishes hunting the native savage orcs for a good Krumpin
+- House Fingerpori fixed
+- Irminsul Tree buildings made available for both beastmen and Norscans
+- Great Pillars fixed
+- Fixed The Chaos offering Decision to not show for religions it doesnt handle
+- Enabled freckles system for some human, elf and dwarf cultures
+- Fixed weight_multiplier on DR_cults.60001 to DR_cults.60000
+- Fix to where counties hold by the Phoenix King werent given away to the new ruler
+- Updated worship_morr trait GFX
+- Summon Throngs decision limited to a single use every year
+- Added only_playable and other pretriggers to decisions to continue performance optimisation
+- Added The Druchii Watchtower Wonder and placed one in all 11 canon provinces as a buffer to the chaos wastes
+- Added the Ghrond wonder for Morathi
+- Added The Black Tower wonder for Malekith
+- Modified positions.txt so each of the Druchii Towers are at the center of each city
+- Adeed a magic law system allowing you to legalize magic, This has a high chance of causing unrest or rebellions
+- Added a Bloodline for legalizing magic (Will most likely be merged later with the bloodline for forming the empire when the decision to form the colleges of magic is completed)
+- Fixed The Ramaccan portraits
+- Allowed Ungors in Ruler Designer
+- Allowed Blood Dragons in Ruler Designer
+- Allowed Forest Spirits in Ruler Designer
+- Added a whole bunch of Opinion Modifiers
+- Cleaned up all traits available in ruler designer to make for a friendlier experience
+- You can now have more than one apprentice at a time
+- Reworked Magic Learning and inheritance
+- Fixed the Cultist society missions firing twice
+- Magic casting as part of a battle is now completely automated, all Mage commanders in a battle will summon special spell units every 5 days of combat, these units disappear after the battle ends. Mages only have a limited amount of times they can summon these units depending primarily on their magic potential tier and to a lesser extent magic power skill level
+- Cleaned up Vlad Von Carstein event spawned troops (Still split retinues though)
+- Added an extra step to the VAMPIRE WARS game rule, it now progresses: DEFAULT > DANGEROUS > DEADLY > OFF
+- Fix for Karond Kars unique building not showing
+- Adjusted history files with artifacts given out to Asur characters, and added in the Phoenix Crown.
+- Gave Caledor Dragontamer his nickname
+- Increased Teclis Magic Power in the history files
+- Overhaul of High Elf Colony system
+- Fixed a bunch of colony buildings being mistakenly scoped to the location of the holder, so if they ever went to ulthuan as a commander a bunch of buildings would explode
+- Added a decision for the phoenix king that lets you make all land you may somehow own outside of Ulthuan into a colony. The player is given a choice of three lords in an event from the most powerful members of the colony
+- Added a new culture for High Elf colonists, ai lords will embrace this culture if landed outside Ulthuan and switch back out of it if they somehow end up landed back in Ulthuan, the culture has +2 marital, opinion bonuses with interventionist elves and opinion maluses with isolationist elves to match the interventionist trait.
+- Removed 40 buildings and added 4. Previously every High elf culture had two full building chains for cultural buildings one for inside and one outside Ulthuan. Now there is a single cultural building chain used outside of Ulthuan for all High Elf cultures that gives some of every troop type + chariot special troops.
+- Added two new Bloodline for High Elves.
+    -The first is given to any Pheonix King who is burned crossing the flame, replacing the old trait, this bloodline is only active for Cadai religion characters of the founders dynasty, give large maluses to opinion with Cadai followers though the new colonial culture is more tolerant.
+        This bloodline can be deactivated by the second bloodline. As long as this bloodline is active, unlanded member non-heirs of your dynasty may decide to leave Ulthuan to any High Elf Colonies or become adventurers.
+    -The second is given when a member of the first bloodline manages to cross the flame successfully and is crowned Phoenix King, this bloodline is given to all members of your dynasty who have the first bloodline not just your direct descendants.
+- Began reworking positions.txt across the map in preparation for the map overhaul
+- Allow Norscans with patron traits to access some chaos events and decisions.
+- Added a bunch of new scripted triggers to check which chaos god characters worship
+- Offmap decisions are setup for undivided if needed
+- Edited ai chance to stop hidden cultist outing themselves using the boons
+- Summon Reinforcements from the warp wait time lowered from 2400 days to 1200 days
+- Repaired the Norscan Warlord/Reaver traits and event chains
+- Allowed Chaos Raid CB for all followers of chaos no matter their culture or government
+- Allowed chaos rulers with ambitious trait to use county conquest CB
+- Update to the artifact events from smiths etc.
+- Applied fix to cure tomb kings, vampires, kdaai, demons(except nurgle demons) of disease related modifiers and disease related symptoms.
+- Reiksmarshal Minor Title should now grant the Grudge Settler Runefang and removing the Title should remove it
+- Added a small QOL improvement to the employment decisions.
+    You activate one decision to make them all appear, and another decision to make them all disappear from the intrigue menu.
+- Added the Invite Witchhunter decision to allow you to request a witch hunter to join your court if there is none
+- Added a Witchhunter Minor Title to protect your witchhunter from court exodus if you are over your court limit (will add more events tied to this in time)
+- Repaired the employment decisions to show the name of the employed character
+- Daemon Princes are hidden during character selection, you will have to know where they are to play them
+- Crazy Cannibal fixed for Ogres
+- Fixed the ability to spam the Chaos Dwarf selling armaments decision which could lead to players having unlimited money
+- Gave Konrad von Carstein the county of Waldenhof
+- Gave Mannfred von Carstein the county of Templehof
+- Fixed a few event frames
+- Made the ruler of Luccini of the "Lupo" Dynasty
+- Gave Malekith the "Disinherited" trait to stop any inheritance loopholes
+- Changed traits undernourished to is_malnourished and fat to is_fat to match vanilla traits. removed the original warhammer health traits
+- Modified the provinces around the gulf of medes to fit Antoch, the Brettonnian Crusader Fortress-City
+- Added unique building - Antoch which provides commander limit, tax income, light cavalry, and knights
+- Added the knights of Antoch, a holy order from Brettonia who wages war in the southern desert in the name of the lady
+- Fixed the CB_icon_strip
+- Increased orc tax income
+- Removed duplicate Sea Temple building
+- Gromnil mine changed to Gromril
+- Regular Tomb Kings county cb restricted to inside e_nehekhara, prestige requirement raised to 250 prestige. A separate version for outside e_nehekhara costs 2500 prestige however the cost goes down to 1500 if you control either the whole western or eastern region of Nehekhara, if you have e_nehekhara the cost goes down further to 250
+- Added onto the Chaos Cults system
+- Doom Engine + Magic Laws/Battle Magic Edits
+    -Doom Scale change from 1-100 to 1-1000 and changed to global variable from a province variable.
+    -All changes to the counter changed from directly changing the value to scripted effects e.g.
+        add_doom_progress_tiny_effect,
+        reduce_doom_progress_major_effect etc.
+    (There are some still some old ones in the files, but these are in unused events and pending a purge when testing version is out)
+    -Every single war declared by chaos rulers + norcan follower of chaos and all wars declared against them will add or remove 1 doom depending on the result. Wars vs other chaos rulers, Skaven, norscans are excluded.
+    -Chaos specific cbs add or remove more.
+    -All barony’s fully looted by chaos rulers give 1 doom if held by non-chaos rulers.
+    -daemonic_subjugation cb needs higher than 250 doom to use
+    -The passive removal of doom every year by the vortex is around 5-20.
+    -All randomly spawned in adult courtiers have a very small chance being mages for Humans with legal magic, Amazons, Chaos Dwarfs, Elves, Skinks, Skaven and Beastman.
+        The chance is heavily influenced by the characters traits and the doom counter.
+    -Daemon summoning in the new battle magic has a higher chance of summoning more daemons when doom is higher.
+- Humans become more accepting of legal magic when a realm manages to keep it legal for over 50 years
+- If a peasant leader spawns as a mage and wins they get a bloodline and get the magic legal law added to their new realm.
+- Added debug event HH_Debug.1 to make a character a mage, you need to use this rather than the console to setup magic power modifer, xp levelling etc.
+    Will give appropriate lore trait for race/culture/religion. Only use with, Humans/Amazons/Vampires, Chaos Dwarfs, Elves, Skinks, Skaven and BeastmEn
+- Repaired wonders for dwarves and other races
+- Disabled the Dwarf Mason trait requirement for the Royal Clan Halls until we implement the societies
+- Hid the Mordheim Notification in case a player somehow manages to take it before the warpstone runs out
+- Added The Arena of Zanbaijin wonder
+- Added a generic Chaos Fortress wonder to mirror the traditional Grand Fortress Available to order races
+- Placed a few chaos fortresses throughout the chaos wastes
+- Added Skavenblight as a wonder
+- Allowed Underground City for Beastmen and Goblins
+- 250+ new artifacts, though about half still need GFX
+- Armour and Magic interaction created
+    Added flag armoured_caster to artifacts for characters that cast magic in armour without penalty.
+    Added in the necessary scripted scope values and modifier definitions for the armour artifacts to provide their duel buff
+- Assigned the following artifacts to Dwarf characters-
+    -Dimrond Angrun received:
+        Gromril Armour
+        Clan Angrund Hammer
+        Defiance Shield
+    -Slayer King Garagrim received:
+        Gromril Armour
+        Axe of Dargo
+        Slayer Crown
+    -Alrik Deathdealer received:
+        Axe of Grimnir
+        Armour of Skaldour
+        Dragon Crown
+        Great Book of Grudges
+        Throne of Power
+- Adds in decisions to buy a black dragon egg, hatch it and eat it.
+- Added in missing black dragon hatchling artifact so that Black Dragon events function.
+- Malekiths armour is now cursed so he cannot remove it
+- Malekith no longer spawns with a Wyvern.
+- Added in an offmap system for each of the four chaos gods, this is fully featured and is how you recieve boons from the gods! Im not going to go into detail here as I want you to explore the system for yourselves
+- Added in an Warband(Warrior Lodge) system for each of the four chaos gods and undivided, this is fully featured and is another way to recieve boons from the gods! Im not going to go into detail here as I want you to explore the system for yourselves
+- Fix Empire unification bloodline
+- Remove/fix references to the elixir_of_youth trait, its an artifact now
+- Allow pillaging provinces with only 1 settlement
+- Minor QoL on establish_lahmian_presence decision
+- Updated fimir shearl to be unable to inherit or hold titles
+- Females that follow slaanesh no longer have the option to go celibate
+- Allowed Southlanders  to tell a story (african flavor from HF)
+- Allowed decision "hold a grand hunt" for cadai and cythari elves group, and allowed females
+- Humans are more likely to support magic when doom is high and less likely when it’s low
+- Expelling the witch Hunters will make magic de facto legal and will make witches and hedge wizards start appearing in the realm
+- Realms ruled by peasant leaders and by those who have expelled the Witch Hunters will have a much higher chance of spawning mages if magic is not legal elsewhere in the old world
+- Split magic laws out into their own triggers and effects files
+- Doom counter can no longer go negative or over 1000 and should start properly.
+    (Now triggers off Malekith on game start and then is set as a repeating event on province 1 every year)
+- Doom can now passively increase per the amount of Champions, Chosen and Princes active in the world as well as if the Everchosen is active
+    This is a random chance and is lower if they only hold land in the chaos wastes and massively lower if they are not landed
+    Higher traits have a higher base chance of adding doom.
+    However the doom loss on death has been extended to champions as well, though at a much lower level
+- Higher Doom makes mages much more likely to appear randomly (even higher for chaos mages) and also allows easier summoning of Demons
+- Magic System
+    Moved all triggers and scripted effects used in the new casting system to new appropriately named files, everything outside these files is currently deprecated except for magic crafting and learning events
+    Rewrote magic xp system to make sense (Why the hell was it using three xp variables rather a single xp variable?)
+- Magic xp is gained during casting in battle and passively through a random event
+- Higher Magic potential traits make it easier for you to level up your magic power level
+- Added a bunch of tooltips to magic triggers
+- Liche priests and tomb kings get a 1 and 2 magic pool boost respectively, otherwise they might not be able to cast with a low magic power. Liche priests are incapable of levelling up magic xp anyway so not that overpowered
+- Wearing armour as a mage can reduce battle magic pool if not using specific mage equipment
+- Gave orcs and goblins a chance to spawn with magic
+- Also made non historical characters on game start have a chance to be mages not just those generated as the game continues to make each game different
+    Average of about 6 High Elf mages, 2-3 dark elf mages, 5 chaos mages etc.
+- Changed time for expelled_strigany modifier to expire after 10 years
+- Magic system extended to sieges
+    On a siege starting it will check all attacking commanders in the army and apply a scaling province modifier that reduces fort level, garrison size and levy reinforce rate depending on the total magic power present in the attacking force.
+    A tutorial event will pop up first time it happens for the player same as battle magic
+- Added Star Sign mechanic to the Civilized Humans of the Old World. They are traits with small modifiers, and they also affect the AI personality
+- Added the Court of the Everqueen government
+- Added the Norscan Tribes government with unique charframe rings
+- Gave Dwarfs the mountain_ambush_tactic Combat Tactic
+- Added special combat tactics for the chaos warbands when experiencing a call to glory
+- Fixed the ai Everchosen spawn events
+- Added Black Crusades
+    -Black Crusades can be started by the Everchosen, or an undivided ruler with enough prestige and piety can start one by decision if no Everchosen exists and there is a moderate level of doom
+    -Other chaos religions (except chaos dwarfs) and Norscans with a dark patron can join in after the war starts for a chance at artefacts and favour if chaos wins
+    -However they will not receive any land or war chest rewards due to hardcoded limitations in the crusade system.
+    -Otherwise functions mostly the same as base game crusades with events, bloodline, traits, and GFX made more suited to chaos
+- Broad priority for targeting is
+    > Kislev (Volkova then Kislev Kingdom)/ the Watchtowers
+    > Empire Coastal
+    > Empire interior/ other parts of Naggaroth/Norse dwarfs
+    > Brettonia/Ulthuan/Estalia
+    > Tilea
+    > Border Princes
+    > Main Dwarf Holds/Araby
+    > Southlands
+    > Tomb Kings/Lustria
+- Ropsmannia removed and its land given to the Kislev kingdom for purposes of making Black Crusade targeting only take 2 wars to get through the Kislev empire and move on to The Empire.
+- Ropsmannia is now a cultural name for e_kislev and k_kislev
+- Added a few extra debug events HH_Debug.2 and HH_Debug.3 to add or reduce doom
+- Fixed save bricking crash with old amazon event causing wh_setup.7 to keep trying to fix a character religion in an infinite loop.
+- Using magic_physical_healing can now remove eunuch trait AND blinded trait
+- State Troops moved again, this time to Obligation Laws. Overall this should help balance as Merchant Republics no longer get access since they get a bonus per tradepost
+- All Culture Modifiers restored and balanced
+- Added a Unique Building for Mordheim
+- Added The Asur Mountain gates Phoenix, Eagle, Griffon, Etc. as Wonders
+- Added special Asur Wonder Upgrades for the Gates
+- Changed Castle Drakenhof to a wonder
+- Added Mourkhain as a damaged wonder to the Badlands
+- Added Nagashizzar as a wonder
+- Adjusted the amount of chaos undivided rulers at game start
+- Added the "Herdstone" building for beastmen, its easy to build and contains several modifiers to give them a bit of a chance
+- Overhauled Beastmen Retinues
+    -Ungor Raiders, light infantry and archers with a 20% offensive/defensive bonus for both
+    -Gor Raiders, archers and heavy infantry with a 30% offensive/defensive bonus for both
+    -Bestigor Raiders, heavy infantry with a 50% offensive/defensive bonus and a 20% morale boost
+    -Centigor Raiders, light cavalry and horse archers with a 30% offensive/defensive bonus for both
+    -Razorgor Chariots, chariots with a 50% offensive bonus and a 20% morale boost
+    -Harpies, war beasts with a 80% offensive and 50% defensive boost
+    -Minotaur Pack, war beasts with 100% offensive bonus and 100% morale boost
+- Overhauled Chaos/Norscan Retinues
+    >Religion Specific
+        -Plague Champions, heavy infantry with a 80% defensive bonus and 20% morale boost
+        -Khorne Berserkers, heavy infantry with a 80% offensive bonus and 20% morale boost
+        -Exalted Ones, heavy infantry with a 20% offensive bonus and 80% morale boost
+        -Brood Lords, heavy infantry with a 40% offensive bonus 30% defensive bonus and 40% morale boost
+    >General
+        -Chaos Marauders, Light infantry and archers with a 20% offensive bonus and 20% morale boost
+        -Chaos Marauder Champions, pikemen and heavy infantry with a 40% offensive bonus and 50% morale boost
+        -Chaos Warriors, heavy infantry and pikemen with 50% offensive bonus and 80% morale boost
+        -Marauder Horsemen, horse archers and light cavalry, with a 50% offensive bonus and 20% morale boost
+        -Chaos Knights, heavy cavalry, with a 50% offensive bonus and 80% morale boost
+        -Gorebeast Chariots, chariots with 50% offensive bonus and 20% morale boost
+        -Trolls, War Beasts with 50% offensive bonus and 80% morale boost
+        -Giants, War Beasts with 100% offensive bonus and 30% morale boost
+    >Norscan only
+        -Skin Wolves, War Beasts with 80% offensive bonus and morale boost
+        -War Mammoth, war elephants with 50% offensive/defensive bonus
+    >Nomad only
+        -Dragon Ogres, war beasts for chaos chosen, 200% offensive bonus and 100% defensive bonus
+        -Dragon Ogre Shaggoths, war beasts for daemon princes, 400% offensive bonus and 200% defensive bonus
+    >Piety Retinues
+        -Forsaken, daemonic host with 100% offensive bonus and 50% morale bonus
+        -Chaos Spawn, daemonic host with 100% offensive bonus and 100% morale bonus
+        -Fimir Raiders, light infantry and heavy infantry, 100% offensive bonus and 50% morale boost to both
+- Nerfed the Green Knights combat bonus so he wins less
+- Beastmen do not have access to offmap powers, they will get a separate "Brayherd" mechanic
+- Removed the culture requirements from unholy_raid cb. Now every chaos follower can use that cb
+- Von Carstein Vampire War Events should now check held titles before firing
+- Beastmen Duels for rulership are now deadly
+- Added a offmap boon to become a chaos undivided champion as undivided could not become the other champion types
+    and the only other way was through the warbands
+- Ai will now use all boons, and request them in a more intelligent way e.g. will only summon one daemon familiar of each type, won’t claim more than 1 steed etc.
+- Made it so when the ai event to make them join a Warband fires it will prioritize rulers joining, basic daemons, bloodletters, plague lords are now forbidden from joining. As well as rulers e.g. mercs who don’t hold actual land
+- Warband ai memebership limit upped to 60
+- No more independent barons seagits/norcans turning into nomads
+- Norscan Gov won’t turn to republic gov when holding just castles
+- Fixed landless nomad witch hunters chapters
+- Added blood dragon culture check to racial triat assignment system
+- The chaos ruler in Mordheim is no longer the Everchosen
+- Gave the mark and champion traits a bit of piety gain
+- Fixes some scoping issues on the modifiers that were meant to stop chaos waste nomads wasting time making each other tributarys
+- Every daemon in the world has a miniscule chance of adding doom
+- Once you have a mark of a chaos god or are a champion of that god as undivided you are able to convert to that god
+- The Chaos Offering Decision no longer Fires Twice
+- Black Crusades can now be called at low doom once per century per religion, medium or higher doom is still every 30 years per religion
+- If any kingdom in the Chaos Wastes or Norsca (except Fjellsende, The Goromadny and the Isles) are held by a non chaos ruler then the once per century restriction is lifted, Chaos will focus on the Chaos Wastes then Norsca
+- Adjusted technology in the Chaos Wastes
+- Added the Mark of Chaos for the Everchosen
+- AI will no longer take their husband as a consort
+- Fixed a few instances where chaos nomad govs might not be setting correctly in nomad agitation and minor clan uprising events
+- You cannot send mounts gained from the offmaps back to them for more Favour
+- Artifacts with a higher quality level than 5 now no longer give the same favour as a quality level 3 artefact
+- Added scripted effects to give or take varying levels of favour appriate to the offmap a character has access to. Changed chaos cb’s to use these effects
+- You can no longer learn lores through boons multiple times or become a berserker if you a mage and vice versa
+- Chaos Undivided can use the steeds from the offmaps
+- Made the ai even more sensible with boons
+    e.g they won’t recruit champions if they are not one themselves, they won’t always summon an army unless they are at war to allow them to save up for higher tier boons etc.
+- Fixed issue with Fimir born from human mothers not getting Fimir portraits
+- Slavery menu now works for selling slaves
+- Magic revolts will no longer pick an imprisoned person to be the leader
+- Black Crusade game rule is switched around and the default is everyone has access
+    ultimately the ai is stupid and we need undivided chaos rulers to have the potential to call them if we don’t want to just have an event for them to fire
+- Zanbaijin holdings and chaos holy sites will no longer be destroyed when a chaos ruler in the wastes converts to a nomad
+- The Lizardmen War to reclaim the staff of jade has been added, the empire of lustria has to be formed first, and then Mazdamundi will awaken to lead the lizardmen against the Bretonnian Crusade City of Antoch
+    If you succeed he will enact the ritual to reset the doom counter to 0
+- The secret Kislev event will now make you an ice-witch if you succeed as a fallback route to keep the magic alive until the overhaul
+- Converted the Oak of Ages to a wonder
+- Fimir will now get blinded instead of one eyed
+- Adjusted Disease outbreak start dates
+- Returned access to specific offmap gods for beastmen that worship them, but increased the boon cost similar to Chaos Undivided
+- Added the Breyherd offmap Power for the Beastmen, this is unique from the other chaos gods with its own set of mutations and effects for beastmen
+- Fix to edge case of spell units not spawning in correct province, and fix to prevent commanders getting kicked when casting starts. Had to turn off auto army merging due to hardcoded bug with commanders being kicked when merging
+- Placed a Beastman ruler in Morgheim surrounded by orcs on all sides but determined to hold the ruin
+- Merged the "old world only - Elf Enclaves" submod with "old world only", since the doom engine fires on malekith on game start.
+- And many many general bugfixes and localization fixes
+------------------------------------------------------
+Legacy_v1.1.6:
+------------------------------------------------------
+- Added vampire religion icon for Mapmode and topbar
+- Fixes for some GFX
+- Fixed the witch hunters having 0 mercs
+- Added an option to ruler designer to start with magic
+- Some fixes to the warpstone stuff (no longer shall the world descend into addiction and death)
+- Limshof now has a holder
+- Mausoleum temple building should be fixed for Vampires
+- Increased maintenence cost for Vampire Retinues
+- Added a Game Rule for the Vampire Wars:
+    Default: ~55K troops for Vlad
+    Stronger: ~100k troops for Vlad (great for multiplayer in The Empire)
+    Off: The wars will not be scripted
+------------------------------------------------------
+Legacy_v1.1.5:
+------------------------------------------------------
+- Malekith should now be incapacitated properly just like a tomb king in combat and from murder plots instead of just continually walking away unscathed
+- Restored some of the unique buidlings removed in the past as others have become wonders
+- Added chaos religion icon for Mapmode and topbar
+- Added greenskin religion icon for Mapmode and topbar
+- Updated khorne_berserker trait to be **RED**
+- Adjusted the new chaos character frames
+- Fixes to the Assign Racial Trait system
+- Fix so the ai wont back out of the convert to chaos horde decision
+- Added a prestige and is_adult requirement to reestablish_naggaroth decision
+- Fixed Arabyan castle buildings
+- Added a max limit of 1000/500 to a bunch scaled_wealth commands in prosperity events and claim fabrication
+- Fixed find court physician doing nothing
+- The ai can now only assign a courtier with a matching religion and culture as their court tutor
+- Empire Elective is now fixed
+- Fixed backup event to kill characters born of incompatible parents or races that shouldnt reproduce which only checked the father scope not true_father, so hidden bastards could still be born
+- The Duel against the Green Knight on your grail quests are to the death!
+- Fix for weak_warboss modifier being permanent with no way to remove it, now winning a challenger duel will remove the modifier, also made sure orc duels are to the death
+- Set custom tooltips for the laws to reduce the overall size of the tooltips.
+- Fixed a dynasty (33098) which random Lowborns of all cultures where being randomly given to, dynasty had no name in the files
+- Munzig was one of the provinces that is supposed to have a gold mine in it, but wasnt one of the provinces that allowed a tradepost
+- Dissabled the blocking of internal vassal wars for Druchii
+- You can now take the forge bloodline ambition multiple times provided you havent already forged a bloodline with that character, prestige cost to take the ambition scales up from 20000 > 40000 > 50000 > 60000 and capping at 75000 once you have four forged bloodlines
+- Freebootaz and Pirates have begun to get some love:
+    Seagit(goblin pirates) and Freeboota(orc pirates) cultures and portrait gfx added
+    Freeboota government implemented
+    Finished Pirate Fleet government as well as some alterations to account for it
+    spritetypes file set up for Pirate Fleet and Freebootaz government
+    localisation file for Pirate Fleet and Freebootaz governments
+- Restored the "Enforce Realm Peace" Button. Though its still up for debate wether to just remove it completely
+- Fix for the child portraits, elves and dwafs who reach 16 should have the correct portrait
+- Fixed Hellebrons Dark Fire amulet not showing its gfx correctly
+- Dark Elves and High Elves no longer lose opinion from having troops raised too long
+- Added a random event that can trigger every decade or so when you are old world religion ruler and border an openly chaos realm or across across a short sea from one.
+    A group of cultists will enter the realm and move to random realm lords court and join an appropriate cult society if able.
+    This event has a higher chance to trigger if bordering a realm ruled by a demon prince or chosen.
+    The cultist have a higher chance of being caught depending on your state intrigue (unless you spymaster is a secret cultist).
+    Realms that have expelled the witch hunters will always fail to catch them.
+- Fixed it so the hunt apostate lord spiritual action gives people burnt at the stake the burned portrait same as those burnt by witch hunters.
+- Added Warpstone Meteors and Veins
+- Overhauled Warpstone System
+- Added Black Marketplace
+- Increased Vlads starting forces for both the player and the AI
+- Overhauled Vampire Retinues
+    Undead Horde, summoned troops with a 100% offensive and 50% morale bonus
+    Dire Wolves, summoned troops with a 10% offensive 50% morale bonus
+    Crypt Ghouls, light infantry with a 40% offensive and 20% defensive bonus
+    Cairn Wraiths, pikemen with a 40% offensive and 20% defensive bonus
+    Grave Guard, heavy infantry with a 20% offensive and 40% defensive bonus
+    Hexwraiths, light cavalry with a 40% offensive and 20% defensive bonus
+    Black Knights, heavy cavalry with a 20% offensive and 40% defensive bonus
+    Vampire Knights, special troops, with a 70% offensive, 30% defensive, and 50% morale bonus
+    Corpse Carts, chariots, 50% defensive and 50% morale bonus
+    Crypt Horrors, war beasts, 50% offensive and 100% defensive bonus
+    Vargheists, war beasts, 100% offensive 50% defensive bonus
+- Vlad Von Carstein now starts with a Large Retinue Army to match the other Elector Counts
+- Fixed Daemon Portraits
+- Fixed a bunch of minor bugs
+------------------------------------------------------
+Legacy_v1.1.3:
+------------------------------------------------------
+- Added ai_check_interval to all WH decisions, which will help performance as well as the frequency of greenskin/beastmen duels etc.
+- "Empire Unification" decision made more difficult to achieve until it can be updated completely
+- Updated map/terrain/"colormap" with new effects for the vortex static model
+- Updated map/terrain/"colormap" with new effects for Kislev/Norsca/Troll County
+- Updated map/terrain/"colormap_water" with new effects for the vortex static model
+- Updated map/trees for an overall better map
+- Imported Vortex Model and Shader **credit: Arasakes**
+- Imported Gold Mine Models around the old world
+- Updated Green Knight portrait/trait with community version
+- Repaired missing Bretonnian on_actions for knight errant trait
+- Repaired and split the grail knight and questing knight event chains (not perfect but until the overhaul it will work 100%)
+- Compressed GFX files
+- Quick and dirty removal of mass conversions
+- Chaos cult uprisings correctly give demon event troops and a demon commander to the leader, also cultist leaders who are independent rulers are more willing to declare their true faith.
+- Beastmen are no longer acceptable marriage material for everyone
+- Updated the worship trait icons in gfx in case we use them
+- Added some Druchii artifacts to main characters
+- Added Modern GFX for Druchii artifacts
+- Removed Galleys from Skavenblight
+- Capped Skaven breeding events file. **REQUIRES MORE TESTING**
+- Daemon Prince reinforcements from the Warp now last longer
+- Fixed mutations. I removed the brackets from the culture_groups. culture_group = goblin_group instead of culture_group = { goblin_group }
+- Resized custom government icons
+- Kislev now gets its own government type: "Tzardom" with unique charframes and more!
+- Chaos now gets its own government types:
+        "Chaos Horde" for nomads
+        "Chaos Host" for tribals
+        "Chaos Court" for feudal
+- Unique Chaos charframes and more! (perhaps darken/tweak charframes in the future)
+- Arkhan the Black is now properly recognized by his peers as a fellow Tomb King and not a Liche Priest. His portrait remains the same though.
+- e_cathay_west_governor title added so the game doesnt keep endlessly creating new versions of it for the offmap power.
+- ai_cleanup_events has been restored which should enable the following
+    Demand Religious conversion decision now works.
+    Dwarf traits at start cleanup
+    Elven maturity
+    Court cleansing for Khemri Servants and Skaven Breeders
+    Dwarf babies should not be born old already
+    Elven youth trait assignment
+    Everqueen inheritance
+    Free mage_apprentices and pet_consorts on death of Master
+    The Red Duke is dead, destroy the special title
+    Big Akghan succession
+    Martek Scholar succession
+    Destroy Samurs Witch Hunter Chapter
+- Merged RD_Trait distribution system from FaolDeTeine
+- Added and localized the Ruler Designed Vampire trait for people who want to start as a vampire
+- Made it much harder to become the Everchosen
+- Sacrificing prisoners for necromantic power as Vlad now lasts 4 months instead of 1
+- Beginning of the warpstone overhaul!
+        For now you can consume warpstone for magic power just like sacrificing prisoners
+        Vlad starts with 5 Clusters of Warpstone that his minions gathered from mordheim
+        More to come!
+- Changed WH_Defines to allow consorts to be dismissed
+- Unlocked the Everchosen events for players, with some restrictions
+- Adjusted the winds of magic and its affect on the world
+- Chaos Mark traits added and localized
+- Fixed a minor graphical error on a loading screen
+- Cleaned up and overhauled the landed titles folder (should also fix realm colors instead of renaming the files)
+- Ostrosk history file repaired no longer an instant game over
+- Changed **EVERY SINGLE** file to ANSI - CRLF - Windows 1252
+- The King of Bretonnia now starts with the brave trait to stop him from occasionally starting craven
+- Bretonnia buildings changed into local culture checks
+- Same treatment for
+        Araby
+        Tilea
+        Estalia
+        Kislev
+- Skaven Congested province modifier nerfed to -5% from -50% since its stackable
+- Repaired Localization everywhere
+- Temp fix for greensking buildings bug, not a proper fix but will stop the capital being nuked atleast if we cant find the root cause
+- Added recent_county_uprising to a bunch of revolt events, all the non vanilla adapted ones didnt stop additional rebellions triggering.
+- Added a likely fix for the save corruption issue caused by beastmen, less chance it will incorrectly link two nomad beastman titles together and cause the save to brick.
+- Added decision icon for grail quest
+- skaven_foreignconquest cb requirements relaxed to allow dukes to use it, but at a cost of 1500 prestige
+- Updated the Circlet of Iron so that you need magic potential to use it.
+- Replaced Neueslander Gunnery School with Pistoliers
+- Removed the duplicate files and fixes the castle wall requirements for halflings
+- Cleaned tooltips and added scripted triggers
+- Quick fix for the holy war CB bug
+- Increased the amount of consorts allowed across all applicable religions
+- Changed magic polymorph to properly change your gender and give appropriate traits
+- Updated take consort decision to allow to take male - male concubines and female - female concubines
+- Cleaned up employment decisions and allowed you to hire council positions
+- Beginning of the Trade system overhaul:
+        New Routes
+        New Buildings
+        New Balance
+        Reworked systems from vanilla
+            Gold(Empire, Bretonnia, Border Princes, Araby)
+            Cloth(Estalia)
+            Salt(Kislev)
+- Removed all trade posts at game start from the old system
+- Placed new Trade Posts at Game Start
+- Akendorf unique building restored
+- Restored Vlads Subjugation Localization
+- Loosened Building restrictions for Sudenburg
+- Shared portrait properties overhaul (bloodsplatter/hairlip/blackeye)
+- c_calxi no longer believes its a desert or ocean. Ive informed it of its jungle status
+- Polish Sylvanian Buildings
+- Nehekharan removal submod created
+- Reworked Khorne blood tournament to use HF calculations
+- Reforming Myrmidia will now give you byzantine elective
+- Fixed Enactic Succession
+- Removed duplicate Halfling buildings
+- Orcs can no longer be elected to rule Bretonnia, in fact most races should now be excluded properly from elections
+- Made the ship-creation decisions for lizardmen and skaven easier and checked more often so they dont have to walk around the world (May also do this for orcs)
+- Fixed Bloodline for Chaos Dwarfs and the localization for the Empire Bloodline
+- Fixed Warpstone artifact Loacalization
+- Extended Trade Routes all the way offmap
+- Added GFX for new employment decisions
+- Made Grail Quest a High Priority decision
+- Repaired on_actions file with updates from vanilla, Sway/Antagonize should now work
+- new_character_effect adds extra age to elves and dwarfs between the ages of 16 and their respective ages of majority so only a few randomly generated characters are too young to marry or hold land
+- fixed a broke else_if in the new_character_effect breaking the system for non humans and removed a dupe extra age from wh_setup.5 for tomb kings
+- Added a new decision (Return to the Old Ways if you are Hung/Kurgan, Become Chaos Horde otherwise) that lets non nomadic chaos worshipers convert to Chaos Host gov if their realm is entirely within the chaos wastes region. Hung/Kurgan are much more likely to do this
+- Added GFX for this decision
+- Made a champion for the each of the chaos gods out of the 4 norscan brothers (3 of whom are in the border princes area)
+- Fixed localisation error for the minor title "Champion" in the empire.
+- Added can_use_retinue_trigger to every retinue
+- Elector Counts now start with state troops
+- Sudenburg now starts with raised retinues
+- Reworked the respective chaos chosen of each of the ruinous powers to actually represent their god a bit more in traits, education, and base stats.
+- Also gave The Chosen of Khorne a bit more land to see if he does anything when not limited by his tributaries
+- Added Cold One Mount GFX
+- Made the PTSD event HFP.11019 have different options and descriptions for some cultures/religions that dont mind killing
+- Fixed an infinite while loop caused by old magic calculations
+- Changed the chaos champions to be around their 20s, Added a wife for nurgle champion from the khagan of Khursaze
+- The Fay Enchantress is now human, but retains her beauty forever, as it should be
+- Fixed history files. Birth, marriage, and age stuff. Missing = in trait assignments. removed old unused traits.  Fixed mount for the red duke not spawning. Nickname fixes
+- Khalida artifact and new face mask(Needs to be applied to khalida)
+- Added Generic Druchii artifacts
+- Fix to Drakenhof starting with a city as the capital and fixed the drakenhof unique buildings
+- Tribals can hold castles if the county culture is the same, some tribals e.g. amazons cant become feudal, so if their land was taken and upgraded to a castle it becomes useless to them if retaken
+- Disinherited Neferatas and Ushorans brother and his children so if they die we dont end up with a random tomb king in the badlands/mountains
+- Fixed crash with pick_main_deity, by coincidence a large number of ai took the decision at once, but because the modifier that stopped them taking the decision again was done after the events chain they seemed to pick it hundreds of time in a row
+- Merged Malekith death and overthrown empire destruction event. Now when Malekith loses his empire or dies e_naggaroth is destroyed
+- If Malekith held e_ulthuan as well and the the heir to e_naggaroth gets both empires and is not in the asur_group then e_ulthuan is destroyed as well
+- Malekith will also permanently lose access to his unique government if he is overthrown to show his authority has been broken beyond repair (Not sure on this change specifically may adjust)
+- Added decision for reclaiming e_naggaroth if you have the whole capital kingdom and either a large enough realm size or completly control 2 other kingdoms in Naggaroth
+- Chaos Dwarfs also get some extra age for adult characters spawned by events. So they can potentially be made commanders
+- Removed the trait addict from Valka. Addict gives you events where you lose base stats currently
+- First wonder in the Chaos wastes, the Inevitable City, notably give big population max and pop growth to chaos nomads along with other minor boosts, no custom upgrades right now
+- Added chaos cult sleeper agents:
+    The ai can attempt to recruit even when the society has reached the max membership limit, if they succeed in the event chain the recruited target will not join the full society
+    and instead simply change secret religion and be flagged a sleeper agent
+
+    Every 5 years the sleeper agents will check if the society has dipped in membership below the limit and join automatically if it has, when a general cultist uprising happens
+    any sleeper agents will convert, leave any non chaos societies and join in alongside the normal society members
+
+    People the player recruit will always join the society bypassing the limit same as before.
+    rank 3 members of the cult can now also declare an uprising, as the cults are global and members in realms other than the single rank 4 member were essentially useless
+    the ai will not currently declare an uprising if the player is in the same realm as a rank 3 or 4 member
+- Added lots of flavor to the greenskin-specific events
+- First pass at Clean Up\Rebalance of Chaos traits
+- Added our first minor race: The Fimir
+    This is just the framework, they will be polished and expanded on in future patches
+- Fixed "Become Mason" decision
+------------------------------------------------------
+Legacy_v1.0.1:
+------------------------------------------------------
+- I modified the Legacy religion files to allow for certain religions that by all reason SHOULD allow for women to take consorts, to do so
+- Updated some of the traits for new combat rating scale (Chaos, Daemons, Vampires)
+- "Aztec Sacrifice" decision now gives 0.2 favour instead of 1. Needed a nerf and it should also now apply favor to you and not your sacrifice
+- Z_magic_effects.txt, Z_magic_item.txt, Z_magic_power_calculations.txt, z_magic_resist_test.txt, Z_magic_setup.txt, Z_miscast_test.txt, z_spell_process.txt.  -Removed from scripted_triggers
+- Characters birthdate/landed_titles files fixed. Deadmen cant hold titles
+- Province: 158 - Straghov.txt  | 172 - Sepkuzy.txt |  179 - Krasicyno.txt | AND 196 - The Blight.txt were duplicate and removed.
+- Fixed Greenskin traits
+- Found the COA issue: d_webba_weavahrs.tga - should be d_webba_weavahs.tga
+------------------------------------------------------
+Legacy_v1.0.0:
+------------------------------------------------------
+- @Mitsu can no longer kill tomb kings in a duel
+- Removed developer tools: wake slaan/challenge to duel decisions
+- Merged duplicate Become Celibate decisions
+- Removed all that extra blood Finubar was running around with
+- All flavors of Aelves should now be immune to mutations (though I believe this was a feature not a bug)
+- Numerous portrait repairs made (Halflings and Amazonian Men shouldnt be so "pale" anymore)
+- Orks are less mysterious about their size trait
+- Your sick fetishes can now be realized! (allowed to join cult of pleasure again)
+- The Red Duke has a slighly better chance at winning his war, though he's unsure if he'll crash the game if he does
+- Orks should no longer contract a venereal disease
+- Renamed both "vales of florida" to the "floridian vales" which fixed the cut off
+- Repaired the champion minor title, This was conflicting with the Emperors Champion minor title, which I also repaired and
+    Balanced allowing the champion to be given the drakwald runfang/removing it if he is no longer champion
+- Master of elephants restricted to region = world_greater_araby
+- Roman events removed, they were only kept for inspiration on reformation mechanics
+- Removed duplicate decisions and localized "use magic item"
+- All flavors of Dawi should now be immune to mutations
+- Removed some excess GFX
+- Removed the extra witchhunter council position as it was unused
+- Fixed a few parse errors
+- Stopped Druchii usurp spam
+- checked schaos.99 and daemon prince requirements
+- removed old gift artifact decisions
+- Repaired chaos dwarf sorceror trait
+- Sacrificing prisoners should now give chaos favor (however there are still many things that should give favor that dont)
+- Removed tribal/nomad requirements from the chaos raid CB
+- Investigated several broken event chains before "nopeing" right out of there. Those fixes will come in time
+- Boosted the piety and prestige gained from Vlads Subjugation CB (both win/lose) from 100 to 1000
+- Fixed Ghal Maraz localisation
+- Repaired all intermarriage links in the wh_religions file
+- Fixed succession realm collapse for chaos/norscans
+- The precluding succession event that fires warning of unworthy heir converted to a bi-yearly pulse on_action instead of a monthly MTTH
+- Fixed more missing trait icons (Skaven, Goblins, Damsels, etc.)
+- Allowed Ruler Designer, not all WH traits are available and definetly not balanced... but its there if you want it.
+- Mortensholm changed to Mortensheimr
+- Sylvania no longer has access to the imperial gunnery school
+- Relocalized "china"/"chinese" to "cathay"/"cathayan"
+- Buffed Beastman "Gather Army" decision from 80 troops to 500
+- Immortal characters using the child portrait repaired in history (investigation into event for long term required)
+- "Ensnared" opinion modifier now lasts 3 months (Jade Vampires)
+- The Clone wars have ended! The Green Knight will now ride back into the mist from whence he came.
+- As a reward he has been given the "Green Knight" trait, a buffed version of Grail Knight, along with some descriptive localization for flavour
+- Restored Miyan Halfling retinue
+- Replaced all instances of "Ursun" with the proper "kislev_gods"
+- Ice witches will no longer die out in a single generation
+- Back down to 2x starting horde for the Red Duke (Instead of 3x)
+- Applied conversion of MTTH to on_actions supplied by @justyn
+- Removed the infertility event
+- Instances of chinese culture changed to oriental_group
+- Removed govenor portrait from the off_map screen
+- Removed state troops (*again*) @manuswag snuck them back in there on me
+- The Children of Doom Society no longer requires you to be kind, but also not kind.
+- First pass at limiting the building of wonders ( no beastmen, orcs, etc)
+- Localisation fix for the "Brazen Bull" event
+- Elective Leagues now have an option to decline (Will apply a cooldown opinion modifier that will exclude you from leagues for 6 months)
+- Ai Elective leagues moved to yearly on_action
+- "Bloodthirsty Games/Mass Sacrifice" should now work properly including traits for all Khorne, Chaos, Norscan Gods, Cytharai
+- Fixed Malekiths government type. At game start, in case multiple governments are eligible, the first eligible one will be taken. I placed the malektih government above the druchi government in the files. That seems to have fixed it
+- Skaven no longer get galleys in their building chains but through a special event (this should help not only performance but also the skaven financial crisis)(decision requires gfx icon)
+- Lizardmen no longer get galleys in their building chains but through a special event (decision requires gfx icon)
+- Lizardmen cities no longer have access to vanilla ports
+- Skaven "Breeding Pits" now cost less prestige to hopefully make game-overs a little less common
+- "Nurgles Touch" now limited to the proper religions
+- Artillery retinues buffed to stop them being eradicated easily in battles
+- Diseases and Mutations should now be properly limited
+- HF duel engine plugged into bretonnian quests and orc/beastman supremacy fights *SHOULD* work (duelengine.1 removed replaced with HFP.10095 etc.)
+- Fixed province modifier icons (added 40 new ones from vanilla and shifted WH modifiers down by 40) still need a bit of cleanup on the art (some are off center) but its workable for now.
+------------------------------------------------------
+*Relevant Changes Before Legacy Development Began.
+------------------------------------------------------
+###############################
+WH:Geheimnisnacht Master Branch
+###############################
+Changelog V1.3.16
+ ###########################
+ # Minor Changes I
+ ###########################
+    -General localisation
+    -Finalized design on intro loading screen
+    -Added a few more loading screens from "HAMMK"
+    -Finished installer
+    -Fixed unitpanel_specialunits gfx
+    -Integrated Fake Map Modes (This is somewhat incomplete as the technology section will be repurposed for our needs perhaps to check chaos/vampiric taint)
+ ###########################
+ # Building Overhaul I
+ ###########################
+ # Castle
+    # Unique Buildings, more to come!
+    -Altdorf, garrison size, knights, galleys, income
+    -Middenheim, fort level, garrison size, heavy infantry
+    -Talabheim, fort level, garrison size, archers
+    -Nuln, garrison size, military tech, gunpowder, income
+    -Marienburg, garrison size, light infantry, galleys, tax income
+    -Sudenburg, garrison size, pikemen, tax income, commander limit, court size
+    -Grand Moot, reduces short reign penalty up to 10 years
+    -Three Smoke Rings, garrison size, tax income, local revolt risk reduction
+    -Sauerapfel, tax income, tech growth, levy size
+  # Traditional Buildings
+    -Keeps, gives levy and garrison size
+    -Wall quality, gives fort level
+    -Walls, gives fort level, levy size and income
+    -Castle Town, gives income and increases court size
+    -Shipyard, gives galleys
+    -Library, tech growth and retinue size
+    -Armoury, gives morale and reinforcement rate
+    -Militia Barracks, gives light infantry and archers
+    -Barracks, gives heavy infantry and pikemen, adjusted for more pikemen in the WH world
+    -Stable, gives light cavalry and some heavy cavalry
+  # The Empire
+    -Imperial Castle, replaces keep, slightly more garrison for slightly less levy, produces knights
+    -Imperial Castle Town, replaces Castle Town, gives extra income, increases court size, and lowers retinue cost up to 50%
+    -Private Estates, increases income and retinue size
+    -Gunnery School, provides handgunners
+  # Sudenburg
+    -Sudenburger castle, replaces Keep/Castle Town, boost to taxes up to 30%, court size, less levy and replaces heavy infantry with light infantry/archers
+    -House of Knowledge, replaces library, spreads tech growth and increases retinue size
+    -Exotic Fruit Plantation, replaces Private Estates, increases income
+    -Satrap Free Companies, replaces Militia Barracks, gives light infantry and archers with an offensive bonus up to 30%
+    -Infantry Focus, heavy infantry/pikemen offensive and defensive bonus, unlocks Barracks
+    -Cavalry Focus, light calv/knights offensive and defensive bonus, unlocks Stables
+    -Satrap Infantry Companies, replaces Barracks, balanced towards pikemen
+    -Satrap Cavalry Companies, replaces Stables, gives more knights
+    -Gunpowder Focus, 40% offensive/defensive bonus, unlocks gunners
+    -Artillery Focus, 40% offensive/defensive bonus, unlocks artillery
+    -Elephant Focus, 40% offensive/defensive bonus, unlocks elephants
+    -Satrap Gunner Companies
+    -Satrap Artillery Companies
+    -Satrap Elephant Companies
+  # Neueslander Special Buildings
+    -Neue Towns, replaces Castle Town. gives income and levy reinforcement up to 30%
+    -Neue Soldaten, replaces Militia Barracks, less Light infantry, increased morale regeneration
+    -Rough Riders, replaces Stable, light cavalry only, increases their defense/morale up to 20%
+  # Halflings
+    -Halfling Moot, replaces Keep/Castle Town, less levy/garrison, a lot less heavy infantry, increases court size and income
+    -Hot-Pot Catapults, replaces Castle Fortifications, gives artillery and archers but less fort level
+    -Halfling Shepherds, replaces Castle Wall, levy size and income but no fort level
+    -Halfling Militia, replaces Militia Barracks, replaces light infantry with pikemen, less levy overall.
+    -Halfling Muster, replaces Barracks, Light infantry/archers instead of heavy infantry/pikemen
+    -War Sheep Riders, replaces Stable, light cavalry only
+    -Half-tank Foundry, gives artillery, prestige, and morale
+ # City
+  # Traditional Buildings
+    -Wall quality, gives fort level
+    -Walls, gives fort level, levy size and income
+    -City Guard, gives pikemen and handgunners
+    -Merchant Republic Arsenal, gives fort level, garrison size, levy size, and galleys
+    -City Shipyard, gives galleys
+    -City Port, gives tax income
+    -Marketplace, gives tax income
+    -Training grounds, gives levy size, and garrison size
+    -Mustering Ground, gives light infantry, light cavalry and archers
+    -University, gives tech growth and techpoints
+  # Terrain Locked
+    -Farmlands, terrain locked, trade value and garrison size
+    -Mines, terrain locked, trade value and garrison size
+    -Forest Villages, terrain locked, trade value and garrison size
+    -Desert Villages, terrain locked, trade value and garrison size
+    -Tundra Villages, terrain locked, trade value and garrison size
+    -Steppe Villages, terrain locked, trade value and garrison size
+  # The Empire
+    -Imperial Port, gives extra income
+    -Imperial Marketplace, gives extra income
+    -Imperial Militia Grounds, slightly more garrison for slightly less levy
+    -Coaching Inns, levy reinforcement, land organisation and local movement speed up to 30%
+  # Halflings
+    -Mootland Ogres, Gives heavy infantry and increases their offensive/defensive up to 50%
+ # Temple
+  # Unique Buildings
+    -Great Temple of Sigmar, garrison size, prestige/piety, gunpowder and heavy infantry with 15% morale bonus
+    -Temple of the Sacred Flame, fort level, garrison size, prestige/piety, heavy infantry and some knights with 15% defensive bonuses
+    -Centre For Manaan, more galleys, some tax income, prestige/piety and heavy infantry
+    -Witch Hunter Temple in Sudenburg, fort level, garrison size, prestige/piety, gunpowder and heavy infantry with 15% morale bonus
+  # Traditional Buildings
+    -Temple Wall, fort level, levy size and tax income
+    -Temple Fortifications, increases fort level
+    -Elite Barracks, gives Heavy Infantry
+    -Temple Monastery, gives levy/garrison size
+    -Militia Quarters, Gives light infantry and archers
+    -Temple Town, gives income
+    -Shipyard, gives galleys
+    -School, gives tech growth, culture points
+  # The Empire, as well as most of the human races in the game
+    -Sigmar, replaces Temple Fortifications, fort level, heavy infantry and improves morale up to 10%
+    -Ulric, replaces Elite Barracks, gives Heavy infantry, and improves offensive up to 10%
+    -Myrmidia, replaces Temple Monastery, gives slightly less levy/garrison size for some levy reinforcement rate up to 25%
+    -Taal and Rhya, replaces Barracks, gives more archers than light infantry, and improves archer defensive and offensive up to 10%
+    -Shallyan Hospice, replaces Temple Town, gives income and piety
+    -Gardens of Morr, gives knights and improves offensive up to 10%
+    -Manaan Shrine, replaces Shipyard, gives galleys and tax income
+    -Verena Library, replaces School, gives tech growth, culture and economy tech points
+  # Halflings
+    -Esmerelda, replaces Temple Monastery, gives almost no levy/garrison, decreases local revolt risk up to 30%
+  # Brettonia
+    -Grail Chapel, replaces Temple Fortifications, fort level, light cavalry and horse archers to represent mounted yeomen
+  # Tilea
+    -Lares Shrine, replaces Temple Fortifications, fort level and Pikemen
+  # Estalia
+    -Santiago Shrine, replaces Temple Fortifications, fort level, light cavalry and Knights
+###########################
+# Retinue Overhaul I
+###########################
+ # RELIGION RESTRICTED REGIMENTS
+    -Warrior Priests of Sigmar, sigmarite, heavy infantry with a 50% offensive and 100% morale bonus
+    -Wolves of Ulric, ulrican, heavy infantry with a 100% offensive and 50% morale bonus
+    -Company of the Green Hat, taalite, archers with a 100% offensive and 50% defensive bonus
+    -Druids of the Secret Fire, old faith, light infantry with a 100% defensive and 50% morale bonus
+    -Stormguard, manannite, heavy infantry with a 50% offensive/defensive and morale bonus
+ # THE EMPIRE
+    # STATE TROOPS
+    -Swordsmen, light infantry with a 40% offensive and 20% defensive bonus
+    -Spearmen, light infantry with a 20% offensive and 40% defensive bonus
+    -Archers, archers with a 30% offensive and 30% defensive bonus
+    -Crossbows, archers with a 60% offensive bonus
+    -Halbadiers, pikemen with a 20% offensive and 40% defensive bonus
+    -Greatswords, heavy infantry with an 40% offensive and 20% morale bonus
+    -Outriders, light cavalry with a 40% defensive and 20% morale bonus
+    -Imperial Knights, heavy cavalry with a 40% offensive and 20% morale bonus
+    -Handgunners, gunpowder with an 40% offensive and 20% morale bonus
+    # UNIQUE REPLACEMENT REGIMENTS
+    -Deathwatch, Stirland, light infantry with a 20% offensive and 60% morale bonus
+    -Berserkers, Nordland, heavy infantry with a 50% offensive and 30% morale bonus
+    -Beasthunters, Talabacland, archers with a 50% offensive and 30% defensive bonus
+    -Landsknecht, Averland, pikemen with a 50% offensive and 30% morale bonus
+    -Carroburg Greatswords, Middenland, heavy infantry with a 60% offensive and 20% morale bonus
+    -Forlorn Hope, Sylvania, heavy infantry with a 20% offensive and 60% morale bonus
+    -Black Riders, Solland, light cavalry with a 40% offensive and 40% morale bonus
+    -Reiksguard, Reikland, heavy cavalry with a 50% offensive and 30% morale bonus
+    -Long Rifle Company, Hochland, gunpowder with a 60% offensive and 20% defensive bonus
+     # UNIQUE ADDITIONAL REGIMENTS
+    -Ostland Ogres, Ostland, heavy infantry and gunpowder with a 100% offensive/defensive bonus for both
+    -Pike-and-Shot Company, Ostermark, pikemen and gunpowder with a 50% offensive/defensive bonus for both
+    -Westerland Marines, Westerland, heavy infantry and light infantry with a 40% offensive bonus for both
+    -Wissengun, Wissenland, artillery with a 60% offensive bonus
+    -Wissengun, Wissenland, artillery with a 40% offensive and 20% defensive bonus
+  # SUDENBURG
+    # TRADITIONAL COMPANIES
+    -Imperial Free Company, archers and light infantry, 30% defensive bonus for both
+    -Imperial Infantry Company, pikemen and heavy infantry, 20% defensive bonus for both
+    -Imperial Cavalry Company, light cavalry and heavy cavalry, 20% offensive bonus for both
+    # FOCUS DEPENDENT COMPANIES
+    -Imperial Gunner Company, gunpowder units, 20% offensive/morale bonus
+    -Imperial Artillery Company, artillery units, 20% offensive/morale bonus
+    -Imperial Elephant Company, elephant units, 20% offensive/morale bonus
+  # HALFLINGS
+    -Crazy Chefs, light infantry, 20% offensive/defensive bonus
+    -Halfling Trackers, archers, 20% offensive/defensive bonus
+    -Pantry Guards, pikemen and heavy infantry, 20% offensive/defensive bonus
+    -War Sheep Riders, light_cavalry, 20% offensive/defensive bonus
+    -Battle Ram Riders, heavy cavalry, 20% offensive/defensive bonus
+    -Hot Pot Catapults, artillery, 100% offensive/defensive bonus
+    -Great Eagle Riders, war beasts, 100% offensive/defensive bonus
+  # VAMPIRES
+    -Undead Horde, summoned troops with a 100% offensive and 50% morale bonus
+    -Dire Wolves, summoned troops with a 10% offensive 50% morale bonus
+    -Crypt Ghouls, light infantry with a 40% offensive and 20% defensive bonus
+    -Cairn Wraiths, pikemen with a 40% offensive and 20% defensive bonus
+    -Grave Guard, heavy infantry with a 20% offensive and 40% defensive bonus
+    -Hexwraiths, light cavalry with a 40% offensive and 20% defensive bonus
+    -Black Knights, heavy cavalry with a 20% offensive and 40% defensive bonus
+    -Vampire Knights, special troops, with a 70% offensive, 30% defensive, and 50% morale bonus
+    -Corpse Carts, chariots, 50% defensive and 50% morale bonus
+    -Crypt Horrors, war beasts, 50% offensive and 100% defensive bonus
+    -Vargheists, war beasts, 100% offensive 50% defensive bonus
+ ###########################
+Changelog V1.3.17
+ ###########################
+ # Minor Changes II
+ ###########################
+     -Updated Frontend GFX for the loading bar and the hints section
+     -Converted the new popup sections of the Frontend GUI used for the featured ruler/ck3 trailer
+     -Moved the new Map Mode job to the spymaster
+     -for now the offmap "china" power has been moved to the southlands and araby. This will be converted into Cathay in the southlands overhaul
+     -All bugs reported from V1.3.16 are fixed
+ ###########################
+ # Cassus Belli Overhaul I
+ ###########################
+     -Grail crusades will continue to use the old crusade system
+     -The new crusade system will be converted to work for chaos, these "Black Crusades" will be elaborated on in the chaos overhaul
+     -A Northern crusade can be called by Holy Orders of the Empire
+     -Reconquista system has been converted to the Tilea/Estalia regions of the old world.
+     -IN PROGRESS...
+ ###########################
+ # Decision Overhaul I
+ ###########################
+     -Created "offer brief non-aggression pact" targetted decision, this is intended as a new way to form alliances. Limited to your religion group usually though there are exceptions (such as between humans and dwarfs/elves)
+     -IN PROGRESS...
+
+
+------------------------------------------------------
+FREQUENTLY ASKED QUESTIONS
+------------------------------------------------------
+```
+Q: Are you going to add anything from the Age of Sigmar/The End Times?
+A: Short answer: No. I have plenty of work overhauling the current bookmark for now.
+```
+```
+Q: Why can't I play a Half-Elf/Half-Dwarf/Half-Orc/other hybrid character?
+A: Because they don't exist in Warhammer. Humans, Elves, Dwarfs, Orcs, Lizardmen etc. are not biologically compatible. If you take an Elf/Dwarf/etc. as a lover or concubine, any pregnancies will only result in stillbirths, and that's only because the game engine won't let us completely prevent interbreeding.
+```
+```
+Q: I'm having trouble with the Ruler Designer!
+A: The Ruler Designer is not explicitly supported for Warhammer: Geheimnisnacht. We've done some work to fix its worst problems but it is still unbalanced and incomplete. Use at your own risk.
+```
+```
+Q: I understand you don't support the Ruler Designer, but how do I get around the problems?
+A: Use the admin console to add your race trait if it doesn't appear after a few months of in-game time. This can help you avert several issues like the marriage, divorce and miscarriage bug, the lack of long life as an elf or dwarf, the lack of immortality as a vampire or Tomb King, and so on. Most of the time when we get a report of an issue with the Ruler Designer, it's because of race trait issues. Don't add your race trait in the RD itself - due to a hardcoded issue, it causes some traits (like any with the Immortal tag) to not function properly.
+```
+```
+Q: What DLCs do I need to play this mod?
+A: You can play Warhammer: Geheimnisnacht with nothing but the most barebones basic version of Crusader Kings 2 with absolutely none of the DLC activated except for Charlemagne which is required for our 3-D models. However, all major DLCs are highly recommended, as they are either needed for race mechanics or to fully enhance the experience. Most importantly: Horse Lords - Many races, such as Blood Dragon Vampires and High Elfs use HL mechanics Legacy of Rome - Many powerful retinues that balance certain races are contained here The Republic - There are many different merchant republics scattered across the globe The Old Gods - Norse flavour and events for the Norscans and Kislevite pagans Jade Dragon - off-map Powers for Cathay and the Chaos Gods Holy Fury - Bloodlines, warrior lodges and More! No music, unit, or portrait packs are needed, as Geheimnisnacht uses its own music composed by Steve Gernes, custom 3-D models, and handmade portraits made by Silfae.
+```
+```
+Q: How do I learn/use magic?
+A: The Magic system is one of the big systems in need of a rebuild. In its current state, I'm not sure what works and what doesn't. Hopefully, I can finish it soon.
+```
+```
+Q: Why can't Khornates or Blood Dragons learn magic?
+A: Lore restriction, Khornates and Blood Dragons do not use or learn magic under any circumstances. This also means that it **won't** be implemented. Sorry, that's just how the lore works.
+```
+```
+Q: Why is the Empire not unified?
+A: Warhammer: Geheimnisnacht begins in IC 2010, over five centuries before the reign of Karl Franz and the familiar events of recent Warhammer canon such as Total War: Warhammer, the Storm of Chaos campaign, the End Times, etc. Three centuries before Magnus the Pious reunited the Empire in 2304 the Empire was in a state of civil war, as multiple Electors fought over the Imperial throne - and on the night of Geheimnisnacht in 2010, the day the mod begins, Vlad von Carstein of Sylvania revealed himself as a vampire and threw his hat into the ring by summoning a great undead host. This date was chosen because the divisions and events taking place at the time made for better gameplay than the more unified and - so to speak - more stable Warhammer world of the 2500s. Imagine trying to play a campaign when almost every faction is one giant blob!
+```
+```
+Q: Are you going to expand the map to Cathay?
+A: Short answer: No. Long answer: Very little information exists on Cathay, Ind, Nippon and the rest of the lands beyond the Mountains of Mourn in the Warhammer setting. We have nothing to work with, no idea how to properly put their factions together, what mechanics to give them, nothing. Not to mention that the game is already rather laggy with the current world map - expanding the map further and adding at least three new major kingdoms, not to mention all the other factions we'd have to put in, would likely make Geheimnisnacht unplayable on all but the strongest computers. We have, however, compromised and added some Cathayans to a colony in the Southlands. And with Jade Dragon introducing off-map powers we have begun work on representing Cathay in some way.
+```
+```
+Q: Is there any End Times-style content? Like the world ending?
+A: Something to that effect is planned, absolutely, but not yet fully implemented.
+```
+```
+Q: I got killed by a Halfling in a minor skirmish!
+A: Such is life in CK2, consider hiding in your keep if you're afraid of death.
+```
+```
+Q: I want to help out! How can I join the Geheimnisnacht team?
+A: It's as easy as making something we can implement into the mod! Put together an event, some code, a guide, etc. and contact @Komioski, the current developer, or ping him in #general-discussion. If your content works, fits the setting and lore and doesn't possess our computers with daemons from the Chaos Realm, you will likely be recruited to the team! ...If it breaks everything, melts our PCs, overpowers the game or contains Warcraft references, you will likely not be recruited to the team. Please test your work before sending it to us, exorcising our offices and computers and replacing devoured team members can seriously delay work on updates.
+```
+```
+Q: Is this mod dead? Why haven't I heard any news in a while?
+A: Be Patient, I have a Development Plan/Roadmap, and I'm constantly active if you haven't heard anything it means I'm working hard on the next update! Trust me, you'll be informed if we ever stop development.
+```
+```
+Q: Are there any plans to create a mod for CK3?
+A: Yes we plan to look into the viability of such a thing upon release in September, we will let you know when we have something to share.
+```
+```
+Q: How do I become a tester/Lab Rat? What's the point?
+A: Anyone who meets the requirements (over 100hrs of playtime, all DLCs, and lore knowledge) can join the lab rat program. We recruit in waves and the #admissions channel opens with little warning but if you manage to make it in it can be a lot of fun! Perks include exclusive sub-mods, access to Dev versions, multiplayer games with the Dev, and a chance to earn a seat on the Council of Thirteen. An exclusive group of contributors with some power over development.
+```
+```
+Q: Does this mod accept donations or have a Patreon?
+A: Nothing official at the moment, I have a Patreon for my game development projects but it's not linked to this project at this time. Perhaps in the future.
+```
+```
+Q: What is WH: Geheimnisnacht - Legacy?
+A: With the recent worldwide pandemic this year, development was put on hiatus for a few months as I adjusted to working from home. This meant that my initial planned release window of summer for the main branch of the mod would have to be pushed back, making it more than 2 years since a public version has been made available to the community. Therefore I decided to set aside some time to rework a personal project of one of our Lab Rats @manuswag, which compiled the old 1.2 version of Geheimnisnacht with my current development version into a "playable" (it didn't CTD at least) version of the mod compatible with CK2 v3.3.3. I spent a week recruiting a host of new Lab Rats and put them to work rooting out the most obvious/game-breaking bugs most of which I managed to fix. The released version is Technically Unsupported and may or may not receive future development (though there is a #critical-bug-report channel for any game-breaking bugs). Eventually, it will be made obsolete by the release of the main branch whenever it may be ready. Until Then Enjoy!
+```
+------------------------------------------------------
+##################### DEV TOOLS #####################
+------------------------------------------------------
+Debug Info Editor by SirCobra (cobras_event_logger_v2.1.exe)
+Version 2.1
+
+Do you hate crashes? Do you want to help us (the WH: Geheimnisnacht team) solve the issues? In this case, you should try out this program!
+
+Thanks to @SirCobra#7071 we have made our own version of the event logger, completely from scratch.
+This program can modify the mod's decisions and events to add additional info to the game.log when they are firing (...\Documents\Paradox Interactive\Crusader Kings II\logs\game.log).
+It modifies events and decisions text files to add a 'log'-line in the immediate/effect clause.
+
+Make sure you have enabled -debugscripts in your steam launch options!
+
+Instructions:
+1. Back away if you don't know what game.log is or haven't understood the description of the program
+2. Read the Warnings!
+3. Back up your decisions and events
+4. Put the cobras_event_logger_v2.1.exe in the same folder, where the folders "events" and "decisions" are located.
+4.1 It should be noted we are talking about the location of the mod's events/decisions, not the base game! They should be located at: ...\Documents\Paradox Interactive\Crusader Kings II\mod\*your mod*
+5. Run the program.
+6. Press y if you want to edit the debug information.
+7. Press 1 to Add Debug Info to events or press 4 to add it to decisions.
+8. Make sure you have enabled -debugscripts in your steam launch options!
+9. Run the game and play until a nice crash happens, look at game.log to find the bogus event.
+10. When you've done testing, please report your findings.
+Usually, the last lines in the game.log and error.log have caused the crash.
+Upload either both files or the last lines in both files.
+11. After you are done you can remove the debug info with option 7. (READ the section Warnings!)
+It will remove all logs generated by this program.
+12. Exit the program with option 0.s
+
+Warnings:
+1. game.log may become huge
+2. The log changes some code in immediate and effect clauses, which can (but should not) cause crashes.
+
+Additional info for modders:
+1. Option 9 will only remove the lines generated by this program, but no manually generated logs.
+2. If you've applied mode 1 and 4 (added commentary to both decisions and events), then the program will stay in a stable checksum rotation. This means it will always switch between the checksum of the active log and the disabled log.
+It can't go back to the pre-edited checksum though, because some formatting is applied, when the program is executed for the first time.
+
+Note:
+If you have any problems with the program or you found a bug caused by the program, feel free contact me.
+Discord: SirCobra#7071
+
+I am active in the WH: Geheimnisnacht Community Discord.
+
+Feel free to join:
+https://discord.gg/MYTwT9
+
+Cheers,
+SirCobra

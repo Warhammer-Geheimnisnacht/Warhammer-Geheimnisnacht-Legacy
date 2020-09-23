@@ -1,0 +1,30 @@
+# c_griffon_gate
+
+# County Title
+title = c_griffon_gate
+
+# Settlements
+max_settlements = 4
+
+b_griffon_tor = castle
+b_gorthael = city
+b_waerstone = temple
+#b_joruntaal = castle
+
+# Misc
+culture = ellyrian
+religion = cadai
+
+#History
+1.1.1 = {
+	build_wonder = wonder_griffon_gate
+	set_wonder_stage = 4
+	build_wonder_upgrade = tiranoci_garrison
+	build_wonder_upgrade = ellyrian_garrison
+	build_wonder_upgrade = nagarythi_garrison
+    build_wonder_upgrade = upgrade_armory
+    build_wonder_upgrade = upgrade_hidden_passageways
+    build_wonder_upgrade = eagle_claw_bolt_throwers
+    build_wonder_upgrade = upgrade_roads
+    build_wonder_upgrade = upgrade_watchtower_network
+}

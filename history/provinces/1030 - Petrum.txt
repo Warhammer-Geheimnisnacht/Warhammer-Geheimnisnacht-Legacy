@@ -1,0 +1,17 @@
+# c_petrum
+
+# County Title
+title = c_petrum
+
+# Settlements
+max_settlements = 3
+
+b_petrum = castle
+b_saladan = city
+#b_rahha = temple
+
+# Misc
+culture = sartosan_tilean
+religion = stromfels
+
+#History

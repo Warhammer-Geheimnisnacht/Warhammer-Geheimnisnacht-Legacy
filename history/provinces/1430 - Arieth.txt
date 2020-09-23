@@ -1,0 +1,17 @@
+# c_arieth
+
+# County Title
+title = c_arieth
+
+# Settlements
+max_settlements = 3
+
+b_arieth = castle
+b_turnos = city
+#b_klouth = temple
+
+# Misc
+culture = karondi
+religion = cytharai
+
+#History

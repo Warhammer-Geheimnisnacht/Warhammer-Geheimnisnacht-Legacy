@@ -1,0 +1,27 @@
+# c_kazarajin
+
+# County Title
+title = c_kazarajin
+
+# Settlements
+max_settlements = 4
+
+b_kazarajin = tribal
+b_tsang = temple
+#b_nargai = temple
+#b_ooth_aran = castle
+
+# Misc
+culture = aghol
+religion = slaanesh
+
+1500.2.28 = {
+	build_wonder = chaos_fortress
+	set_wonder_stage = 3
+    build_wonder_upgrade = upgrade_moat_water
+    build_wonder_upgrade = upgrade_dueling_room
+    build_wonder_upgrade = upgrade_slaanesh_altar
+    build_wonder_upgrade = upgrade_torture_chamber
+    build_wonder_upgrade = upgrade_heating_pipes
+    build_wonder_upgrade = upgrade_retinue
+}

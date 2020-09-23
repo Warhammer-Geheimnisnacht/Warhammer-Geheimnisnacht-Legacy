@@ -1,0 +1,28 @@
+# c_terkmet
+
+# County Title
+title = c_terkmet
+
+# Settlements
+max_settlements = 5
+
+b_terkmet = tribal
+b_ulthur = temple
+#b_gurunar = temple
+#b_archonar = castle
+#b_qaluud = city
+
+# Misc
+culture = mung
+religion = chaos
+
+#History
+1200.8.20 = {
+	build_wonder = chaos_fortress
+	set_wonder_stage = 3
+    build_wonder_upgrade = upgrade_armory
+    build_wonder_upgrade = upgrade_moat_spike
+    build_wonder_upgrade = upgrade_garden_inner
+    build_wonder_upgrade = upgrade_nurgle_altar
+    build_wonder_upgrade = upgrade_hypocausts
+}

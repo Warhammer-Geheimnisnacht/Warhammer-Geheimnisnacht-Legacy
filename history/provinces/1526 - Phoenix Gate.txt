@@ -1,0 +1,30 @@
+# c_phoenix_gate
+
+# County Title
+title = c_phoenix_gate
+
+# Settlements
+max_settlements = 4
+
+b_phoenix_tor = castle
+b_jaelnis_tor = city
+b_faerlith_tor = temple
+#b_vaerne_tor = castle
+
+# Misc
+culture = avelorni
+religion = cadai
+
+#History
+1.1.1 = {
+	build_wonder = wonder_phoenix_gate
+	set_wonder_stage = 4
+	build_wonder_upgrade = eatainian_garrison
+	build_wonder_upgrade = avelorni_garrison
+	build_wonder_upgrade = caledori_garrison
+    build_wonder_upgrade = upgrade_armory
+    build_wonder_upgrade = upgrade_hidden_passageways
+    build_wonder_upgrade = eagle_claw_bolt_throwers
+    build_wonder_upgrade = upgrade_roads
+    build_wonder_upgrade = upgrade_watchtower_network
+}
