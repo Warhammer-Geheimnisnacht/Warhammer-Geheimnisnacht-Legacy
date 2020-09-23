@@ -1,4 +1,4 @@
-name = "Warhammer: Geheimnisnacht-Legacy"
+name = "WH: Geheimnisnacht - Legacy"
 path = "mod/Warhammer-Geheimnisnacht-Legacy"
 
 user_dir = "Warhammer-Geheimnisnacht-Legacy"
