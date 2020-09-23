@@ -1,7 +1,7 @@
-name = "WH: Geheimnisnacht-Legacy"
-path = "mod/WH-Geheimnisnacht-Legacy"
+name = "Warhammer: Geheimnisnacht-Legacy"
+path = "mod/Warhammer-Geheimnisnacht-Legacy"
 
-user_dir = "WH-Geheimnisnacht-Legacy"
+user_dir = "Warhammer-Geheimnisnacht-Legacy"
 
 replace_path = "bookmarks"
 replace_path = "history/characters"
@@ -31,4 +31,4 @@ replace_path = "music"
 
 picture = "icon.jpg"
 
-tags = { "Complete Overhaul" "warhammer" "fantasy" }
+tags = { "Complete Overhaul" "Warhammer" "Fantasy" }
